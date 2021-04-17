@@ -15,8 +15,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private final int cameraRequestCode = 1;
-    private final int writeExternalRequestCode = 2;
-    private final int readExternalRequestCode = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,40 +66,6 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this,
                         new String[]{Manifest.permission.CAMERA},
                         cameraRequestCode
-                );
-            }
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_DENIED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                ActivityCompat.requestPermissions(
-                        MainActivity.this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        writeExternalRequestCode
-                );
-            } else {
-                ActivityCompat.requestPermissions(
-                        MainActivity.this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        writeExternalRequestCode
-                );
-            }
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_DENIED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                ActivityCompat.requestPermissions(
-                        MainActivity.this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        readExternalRequestCode
-                );
-            } else {
-                ActivityCompat.requestPermissions(
-                        MainActivity.this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        readExternalRequestCode
                 );
             }
         }
