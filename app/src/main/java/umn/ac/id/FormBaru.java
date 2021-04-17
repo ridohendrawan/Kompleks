@@ -1,18 +1,26 @@
 package umn.ac.id;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FormBaru extends AppCompatActivity {
     private final int cameraRequestCode = 1;
+    private String pathFoto = null;
     private Button btnKembaliMenu, btnKamera;
     private ImageView placeholderGambar;
 
@@ -36,11 +44,24 @@ public class FormBaru extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentAmbilFoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                File fileGambar = null;
 
                 try {
-                    startActivityForResult(intentAmbilFoto, cameraRequestCode);
-                } catch (ActivityNotFoundException e) {
+                    fileGambar = membuatGambar();
+                } catch (IOException e) {
                     // abaikan untuk sekarang...
+                    Log.d("e", e.getMessage());
+                }
+
+                if (fileGambar != null) {
+                    Uri photoUri = FileProvider.getUriForFile(
+                            getApplicationContext(),
+                            "com.avanger.fileprovider",
+                            fileGambar
+                    );
+
+                    intentAmbilFoto.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
+                    startActivityForResult(intentAmbilFoto, cameraRequestCode);
                 }
             }
         });
@@ -51,10 +72,26 @@ public class FormBaru extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == cameraRequestCode && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap gambar = (Bitmap) extras.get("data");
-            placeholderGambar.setImageBitmap(gambar);
+            File gambar = new File(pathFoto);
+
+            Log.i("i", gambar.getAbsolutePath());
+
+            if (gambar.exists()) {
+                placeholderGambar.setImageURI(Uri.fromFile(gambar));
+            }
         }
+    }
+
+    private File membuatGambar() throws IOException {
+        // Membuat filename.
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String namaFileGambar = timestamp + "_";
+        File direktoriPenyimpanan = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File gambar = File.createTempFile(namaFileGambar, ".jpg", direktoriPenyimpanan);
+
+        // Simpan gambar tersebut.
+        pathFoto = gambar.getAbsolutePath();
+        return gambar;
     }
 
     public void openKembaliMenu (){
