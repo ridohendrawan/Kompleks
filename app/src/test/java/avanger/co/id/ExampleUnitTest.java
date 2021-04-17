@@ -1,4 +1,4 @@
-package umn.ac.id;
+package avanger.co.id;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package umn.ac.id;
+package avanger.co.id;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;

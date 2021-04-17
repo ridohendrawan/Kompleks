@@ -1,4 +1,4 @@
-package umn.ac.id;
+package avanger.co.id;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,15 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class DaftarTamu extends AppCompatActivity {
+public class PanduanPengguna extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar_tamu);
-        Button btnKembaliMenu,btnData1;
+        setContentView(R.layout.activity_panduan_pengguna);
+        Button btnKembaliMenu;
         btnKembaliMenu = findViewById(R.id.KembaliMenu);
-        btnData1 = findViewById(R.id.data1);
 
         btnKembaliMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,21 +22,10 @@ public class DaftarTamu extends AppCompatActivity {
                 openKembaliMenu();
             }
         });
-
-        btnData1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openData1();
-            }
-        });
     }
 
     public void openKembaliMenu (){
-        Intent intent = new Intent(DaftarTamu.this, MainMenu.class);
-        startActivity(intent);
-    }
-    public void openData1 (){
-        Intent intent = new Intent(DaftarTamu.this, DetailDaftarTamu.class);
+        Intent intent = new Intent(PanduanPengguna.this, MainMenu.class);
         startActivity(intent);
     }
 }

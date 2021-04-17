@@ -1,4 +1,4 @@
-package umn.ac.id;
+package avanger.co.id;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -56,7 +56,7 @@ public class FormBaru extends AppCompatActivity {
                 if (fileGambar != null) {
                     Uri photoUri = FileProvider.getUriForFile(
                             getApplicationContext(),
-                            "com.avanger.fileprovider",
+                            "avanger.co.id.fileprovider",
                             fileGambar
                     );
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="umn.ac.id">
+    package="avanger.co.id">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UAS_Avanger">
         <provider
-            android:authorities="com.avanger.fileprovider"
+            android:authorities="avanger.co.id.fileprovider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -23,20 +23,20 @@
                 android:resource="@xml/file_paths" />
         </provider>
         
-        <activity android:name=".DetailDaftarTamu"></activity>
-        <activity android:name=".PanduanPengguna" />
-        <activity android:name=".DaftarTamu" />
-        <activity android:name=".FormBaru" />
-        <activity android:name=".MainMenu" />
-        <activity android:name=".LupaPassword" />
-        <activity android:name=".SplashScreen">
+        <activity android:name="avanger.co.id.DetailDaftarTamu"></activity>
+        <activity android:name="avanger.co.id.PanduanPengguna" />
+        <activity android:name="avanger.co.id.DaftarTamu" />
+        <activity android:name="avanger.co.id.FormBaru" />
+        <activity android:name="avanger.co.id.MainMenu" />
+        <activity android:name="avanger.co.id.LupaPassword" />
+        <activity android:name="avanger.co.id.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="avanger.co.id.MainActivity" />
     </application>
 
 </manifest>
