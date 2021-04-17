@@ -95,13 +95,13 @@ public class MainActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(
                         MainActivity.this,
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        cameraRequestCode
+                        readExternalRequestCode
                 );
             } else {
                 ActivityCompat.requestPermissions(
                         MainActivity.this,
                         new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        cameraRequestCode
+                        readExternalRequestCode
                 );
             }
         }
