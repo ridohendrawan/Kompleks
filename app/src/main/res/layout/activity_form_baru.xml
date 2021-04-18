@@ -96,28 +96,7 @@
             android:letterSpacing="0.03"
             android:layout_marginTop="8dp"/>
 
-        <EditText
-            android:inputType="textPersonName"
-            android:hint="Plat Nomor Kendaraan"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:background="@drawable/forget2"
-            android:textColor="#0d6e6a"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:layout_marginTop="5dp"
-            android:paddingLeft="20dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jam Masuk"
-            android:textColor="#ffff"
-            android:textSize="15dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
-            android:letterSpacing="0.03"
-            android:layout_marginTop="8dp"/>
 
         <EditText
             android:inputType="textPersonName"
@@ -160,15 +139,16 @@
             <ImageView
                 android:id="@+id/placeholderGambar"
                 android:layout_width="300dp"
-                android:layout_height="125dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="175dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
                 android:layout_centerVertical="true" />
         </LinearLayout>
 
         <View
             android:layout_height="2dp"
             android:layout_width="300dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="80dp"
             android:layout_marginBottom="15dp"
             android:backgroundTint="#ffff"
             android:background="@android:color/darker_gray"/>

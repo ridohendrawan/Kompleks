@@ -48,7 +48,7 @@
         android:layout_marginLeft="70dp"
         android:letterSpacing="0.03"/>
 
-    <EditText
+    <TextView
         android:inputType="textPersonName"
         android:hint="Nama Tamu"
         android:layout_width="300dp"
@@ -72,7 +72,7 @@
         android:letterSpacing="0.03"
         android:layout_marginTop="8dp"/>
 
-    <EditText
+    <TextView
         android:inputType="textPersonName"
         android:hint="Tujuan Kunjugan"
         android:layout_width="300dp"
@@ -95,7 +95,7 @@
         android:letterSpacing="0.03"
         android:layout_marginTop="8dp"/>
 
-    <EditText
+    <TextView
         android:inputType="textPersonName"
         android:hint="Plat Nomor Kendaraan"
         android:layout_width="300dp"
@@ -118,7 +118,7 @@
         android:letterSpacing="0.03"
         android:layout_marginTop="8dp"/>
 
-    <EditText
+    <TextView
         android:inputType="textPersonName"
         android:hint="13:00 - 07-04-2021"
         android:layout_width="300dp"
@@ -141,7 +141,7 @@
         android:letterSpacing="0.03"
         android:layout_marginTop="8dp"/>
 
-    <EditText
+    <TextView
         android:inputType="textPersonName"
         android:hint="17:00 - 07-04-2021"
         android:layout_width="300dp"
