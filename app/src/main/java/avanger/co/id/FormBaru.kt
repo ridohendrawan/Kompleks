@@ -6,98 +6,97 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
+import kotlinx.android.synthetic.main.activity_form_baru.*
 import kotlinx.coroutines.launch
 
 import java.io.File
 import java.io.IOException
-import java.text.SimpleDateFormat
 import java.util.*
 
 class FormBaru : AppCompatActivity() {
-    private val cameraRequestCode = 1
-    private var pathFoto: String? = null
-    private var placeholderGambar: ImageView? = null
+    companion object {
+        private const val cameraRequestCode = 1
+    }
+
+    private var imagePath: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_baru)
 
-        val btnKembaliMenu: Button = findViewById(R.id.KembaliMenu)
-        val btnKamera: Button = findViewById(R.id.btnFoto)
-        placeholderGambar = findViewById(R.id.placeholderGambar)
-
-        btnKembaliMenu.setOnClickListener() { openKembaliMenu() }
-
-        btnKamera.setOnClickListener() {
-            val intentAmbilFoto = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            var fileKosong: File? = null
-
-            try {
-                fileKosong = membuatFile()
-            } catch (e: IOException) {
-                // abaikan untuk sekarang...
-                Log.d("e", e.message!!)
-            }
-
-            if (fileKosong != null) {
-                val photoUri = FileProvider.getUriForFile(
-                        applicationContext,
-                        "avanger.co.id.fileprovider",
-                        fileKosong
-                )
-
-                intentAmbilFoto.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
-                startActivityForResult(intentAmbilFoto, cameraRequestCode)
-            }
-        }
+        btnKembali.setOnClickListener() { openKembaliMenu() }
+        btnFoto.setOnClickListener() { prosesKamera() }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == cameraRequestCode && resultCode == RESULT_OK) {
-            val gambar = File(pathFoto)
+            val gambar = File(imagePath)
 
             gambar.let {
                 lifecycleScope.launch {
                     val compressedImage = Compressor.compress(applicationContext, it) {
-                        default(quality = 30, format = Bitmap.CompressFormat.JPEG)
+                        default(quality = 10, format = Bitmap.CompressFormat.JPEG)
                         destination(gambar)
                     }
 
                     compressedImage.let {
-                        placeholderGambar?.setImageBitmap(BitmapFactory.decodeFile(it.absolutePath))
+                        placeholderGambar.setImageBitmap(BitmapFactory.decodeFile(it.absolutePath))
                     }
                 }
             }
         }
     }
 
-    @Throws(IOException::class)
-    private fun membuatFile(): File {
-        // Membuat filename.
-        val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val namaFileGambar = timestamp + "_"
-        val direktoriPenyimpanan = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        val gambar = File.createTempFile(namaFileGambar, ".jpg", direktoriPenyimpanan)
+    /**
+     * Fungsi akan melakukan pemrosesan kamera.
+     * Ketika gambar selesai didapatkan, gambar akan dikompres.
+     */
+    private fun prosesKamera() {
+        val intentAmbilFoto = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        val fileKosong = membuatFile()
 
-        // Mencari path file kosong tersebut berada.
-        pathFoto = gambar.absolutePath
+        fileKosong?.let {
+            val photoUri = FileProvider.getUriForFile(
+                    applicationContext,
+                    "avanger.co.id.fileprovider",
+                    it
+            )
 
-        return gambar
+            intentAmbilFoto.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
+            startActivityForResult(intentAmbilFoto, cameraRequestCode)
+        }
     }
 
-    fun openKembaliMenu() {
-        val intent = Intent(this@FormBaru, MainMenu::class.java)
-        startActivity(intent)
+    /**
+     * Fungsi bertugas untuk membuat file kosong dengan filename berupa UNIX timestamp.
+     * Akan mengembalikan file tersebut, atau null jika error.
+     */
+    @Throws(IOException::class)
+    private fun membuatFile(): File? {
+        try {
+            val timestamp = (System.currentTimeMillis() / 1000).toString()
+            val direktoriPenyimpanan = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            val gambar = File.createTempFile(timestamp, ".jpg", direktoriPenyimpanan)
+
+            imagePath = gambar.absolutePath
+            return gambar
+        } catch (e: IOException) {
+            Toast.makeText(applicationContext, e.message, Toast.LENGTH_LONG).show()
+        }
+
+        return null
+    }
+
+    private fun openKembaliMenu() {
+        startActivity(Intent(this@FormBaru, MainMenu::class.java))
     }
 }
