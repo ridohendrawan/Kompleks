@@ -10,6 +10,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
@@ -26,13 +29,19 @@ class FormBaru : AppCompatActivity() {
     }
 
     private var imagePath: String = ""
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_baru)
 
-        btnKembali.setOnClickListener() { openKembaliMenu() }
-        btnFoto.setOnClickListener() { prosesKamera() }
+        // Atur Firebase.
+        database = FirebaseDatabase.getInstance().getReference(getString(R.string.firebase_document))
+
+        // Delegasi listeners.
+        btnKembali.setOnClickListener { openKembaliMenu() }
+        btnFoto.setOnClickListener { prosesKamera() }
+        btnSubmit.setOnClickListener { handleSubmission() }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -43,12 +52,10 @@ class FormBaru : AppCompatActivity() {
 
             gambar.let {
                 lifecycleScope.launch {
-                    val compressedImage = Compressor.compress(applicationContext, it) {
+                    Compressor.compress(applicationContext, it) {
                         default(quality = 10, format = Bitmap.CompressFormat.JPEG)
                         destination(gambar)
-                    }
-
-                    compressedImage.let {
+                    }.let {
                         placeholderGambar.setImageBitmap(BitmapFactory.decodeFile(it.absolutePath))
                     }
                 }
@@ -65,14 +72,14 @@ class FormBaru : AppCompatActivity() {
         val fileKosong = membuatFile()
 
         fileKosong?.let {
-            val photoUri = FileProvider.getUriForFile(
+            FileProvider.getUriForFile(
                     applicationContext,
                     getString(R.string.authority),
                     it
-            )
-
-            intentAmbilFoto.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
-            startActivityForResult(intentAmbilFoto, cameraRequestCode)
+            ).also { uri ->
+                intentAmbilFoto.putExtra(MediaStore.EXTRA_OUTPUT, uri)
+                startActivityForResult(intentAmbilFoto, cameraRequestCode)
+            }
         }
     }
 
@@ -94,6 +101,32 @@ class FormBaru : AppCompatActivity() {
         }
 
         return null
+    }
+
+    /**
+     * Fungsi untuk melakukan submission handling.
+     */
+    private fun handleSubmission() {
+        val nama = namaTamu.text.toString()
+        val tujuan = tujuanTamu.text.toString()
+        val plat = platTamu.text.toString()
+        val jamMasuk = (System.currentTimeMillis() / 1000)
+        val jamKeluar = 0L
+
+        if (nama.isNotBlank() && tujuan.isNotBlank() && plat.isNotBlank() && placeholderGambar.drawable !== null) {
+            val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, imagePath)
+            val tamuId = database.push().key.toString()
+
+            database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
+                namaTamu.setText("")
+                tujuanTamu.setText("")
+                platTamu.setText("")
+                placeholderGambar.setImageResource(0)
+                Snackbar.make(formbaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+            }
+        } else {
+            Snackbar.make(formbaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
+        }
     }
 
     private fun openKembaliMenu() {
