@@ -13,7 +13,7 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/KembaliMenu"
+            android:id="@+id/btnKembali"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="20dp"
@@ -61,7 +61,6 @@
             android:layout_marginTop="5dp"
             android:paddingLeft="20dp"/>
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,8 +95,6 @@
             android:letterSpacing="0.03"
             android:layout_marginTop="8dp"/>
 
-
-
         <EditText
             android:inputType="textPersonName"
             android:hint="13:00 - 07-04-2021"
@@ -115,7 +112,6 @@
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
-
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -137,6 +133,7 @@
                 android:textStyle="bold" />
     
             <ImageView
+                android:scaleType="center"
                 android:id="@+id/placeholderGambar"
                 android:layout_width="300dp"
                 android:layout_height="175dp"
