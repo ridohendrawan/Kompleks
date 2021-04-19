@@ -26,7 +26,7 @@ public class LupaPassword extends AppCompatActivity {
     }
 
 
-    public void openMainActivity (){
+    public void openMainActivity() {
         Intent intent = new Intent(LupaPassword.this, MainActivity.class);
         startActivity(intent);
     }

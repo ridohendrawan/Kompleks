@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             openMainMenu();
         }
 
-        Button btnLupaPassword,btnLogin;
+        Button btnLupaPassword, btnLogin;
         EditText loginText, passwordText;
 
         btnLupaPassword = findViewById(R.id.lupapassword);

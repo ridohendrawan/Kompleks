@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#0d6e6a">
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/KembaliMenu"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="left"
-        android:background="@drawable/arrow_left"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PANDUAN PENGGUNA"
-        android:textColor="#ffff"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        android:letterSpacing="0.03"/>
-
-    <View
-        android:layout_height="2dp"
-        android:layout_width="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="0dp"
-        android:backgroundTint="#ffff"
-        android:background="@android:color/darker_gray"/>
-
-
-
-    <ImageView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/panduan"
-        />
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <Button
+            android:id="@+id/KembaliMenu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/arrow_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:letterSpacing="0.03"
+            android:text="PANDUAN PENGGUNA"
+            android:textColor="#ffff"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/darker_gray"
+            android:backgroundTint="#ffff" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/panduan" />
+
+    </LinearLayout>
 </ScrollView>

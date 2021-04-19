@@ -1,227 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#0d6e6a">
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/KembaliMenu"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="left"
-        android:background="@drawable/arrow_left"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DETAIL FORM TAMU"
-        android:textColor="#ffff"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        android:letterSpacing="0.03"/>
+        <Button
+            android:id="@+id/KembaliMenu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/arrow_left" />
 
-    <View
-        android:layout_height="2dp"
-        android:layout_width="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#ffff"
-        android:background="@android:color/darker_gray"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:letterSpacing="0.03"
+            android:text="DETAIL FORM TAMU"
+            android:textColor="#ffff"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama Tamu"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="70dp"
-        android:letterSpacing="0.03"/>
+        <View
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"
+            android:backgroundTint="#ffff" />
 
-    <TextView
-        android:inputType="textPersonName"
-        android:hint="Nama Tamu"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/forget2"
-        android:textColor="#0d6e6a"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="70dp"
+            android:letterSpacing="0.03"
+            android:text="Nama Tamu"
+            android:textColor="#ffff"
+            android:textSize="15dp" />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tujuan Kunjugan"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="70dp"
-        android:letterSpacing="0.03"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:inputType="textPersonName"
-        android:hint="Tujuan Kunjugan"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/forget2"
-        android:textColor="#0d6e6a"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Plat Nomor Kendaraan"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="70dp"
-        android:letterSpacing="0.03"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:inputType="textPersonName"
-        android:hint="Plat Nomor Kendaraan"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/forget2"
-        android:textColor="#0d6e6a"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jam Masuk"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="70dp"
-        android:letterSpacing="0.03"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:inputType="textPersonName"
-        android:hint="13:00 - 07-04-2021"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/forget2"
-        android:textColor="#0d6e6a"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jam Keluar"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="70dp"
-        android:letterSpacing="0.03"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:inputType="textPersonName"
-        android:hint="17:00 - 07-04-2021"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/forget2"
-        android:textColor="#0d6e6a"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="File Gambar"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="70dp"
-        android:letterSpacing="0.03"
-        android:layout_marginTop="8dp"/>
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/samplektp"
-        />
-
-    <View
-        android:layout_height="2dp"
-        android:layout_width="280dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="0dp"
-        android:backgroundTint="#ffff"
-        android:background="@android:color/darker_gray"/>
-
-<!--    Button update delete-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_marginTop="-40dp">-->
-
-<!--        <Button-->
-<!--            android:layout_width="120dp"-->
-<!--            android:layout_height="45dp"-->
-<!--            android:layout_gravity="left"-->
-<!--            android:layout_marginTop="55dp"-->
-<!--            android:background="@drawable/button_merah"-->
-<!--            android:text="DELETE"-->
-<!--            android:textColor="#ffff"-->
-<!--            android:textSize="18dp"-->
-<!--            android:textStyle="bold" />-->
-<!--        <Button-->
-<!--            android:layout_width="120dp"-->
-<!--            android:layout_height="45dp"-->
-<!--            android:layout_gravity="right"-->
-<!--            android:layout_marginTop="-45dp"-->
-<!--            android:background="@drawable/button_hijau"-->
-<!--            android:text="UPDATE"-->
-<!--            android:textColor="#fff"-->
-<!--            android:textSize="18dp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--    </LinearLayout>-->
-
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button3"
-        android:text="KUNJUGAN SELESAI!"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="#FFF"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="35dp"/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/forget2"
+            android:hint="Nama Tamu"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="Tujuan Kunjugan"
+            android:textColor="#ffff"
+            android:textSize="15dp" />
 
-</LinearLayout>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/forget2"
+            android:hint="Tujuan Kunjugan"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="Plat Nomor Kendaraan"
+            android:textColor="#ffff"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/forget2"
+            android:hint="Plat Nomor Kendaraan"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="Jam Masuk"
+            android:textColor="#ffff"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/forget2"
+            android:hint="13:00 - 07-04-2021"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="Jam Keluar"
+            android:textColor="#ffff"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/forget2"
+            android:hint="17:00 - 07-04-2021"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="File Gambar"
+            android:textColor="#ffff"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/samplektp" />
+
+        <View
+            android:layout_width="280dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/darker_gray"
+            android:backgroundTint="#ffff" />
+
+        <!--    Button update delete-->
+        <!--    <LinearLayout-->
+        <!--        android:layout_width="300dp"-->
+        <!--        android:layout_height="100dp"-->
+        <!--        android:layout_gravity="center_horizontal"-->
+        <!--        android:orientation="vertical"-->
+        <!--        android:layout_marginTop="-40dp">-->
+
+        <!--        <Button-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="45dp"-->
+        <!--            android:layout_gravity="left"-->
+        <!--            android:layout_marginTop="55dp"-->
+        <!--            android:background="@drawable/button_merah"-->
+        <!--            android:text="DELETE"-->
+        <!--            android:textColor="#ffff"-->
+        <!--            android:textSize="18dp"-->
+        <!--            android:textStyle="bold" />-->
+        <!--        <Button-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="45dp"-->
+        <!--            android:layout_gravity="right"-->
+        <!--            android:layout_marginTop="-45dp"-->
+        <!--            android:background="@drawable/button_hijau"-->
+        <!--            android:text="UPDATE"-->
+        <!--            android:textColor="#fff"-->
+        <!--            android:textSize="18dp"-->
+        <!--            android:textStyle="bold" />-->
+
+        <!--    </LinearLayout>-->
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/button3"
+            android:text="KUNJUGAN SELESAI!"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
 </ScrollView>

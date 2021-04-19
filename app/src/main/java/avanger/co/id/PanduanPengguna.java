@@ -24,7 +24,7 @@ public class PanduanPengguna extends AppCompatActivity {
         });
     }
 
-    public void openKembaliMenu (){
+    public void openKembaliMenu() {
         Intent intent = new Intent(PanduanPengguna.this, MainMenu.class);
         startActivity(intent);
     }

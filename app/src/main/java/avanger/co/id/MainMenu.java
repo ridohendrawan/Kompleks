@@ -14,7 +14,7 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Button btnKembaliMenu,btnFormBaru,btnDaftarTamu,btnPanduanPengguna;
+        Button btnKembaliMenu, btnFormBaru, btnDaftarTamu, btnPanduanPengguna;
         btnKembaliMenu = findViewById(R.id.KembaliMenu);
         btnFormBaru = findViewById(R.id.formbaru);
         btnDaftarTamu = findViewById(R.id.daftartamu);
@@ -48,22 +48,22 @@ public class MainMenu extends AppCompatActivity {
         });
     }
 
-    public void openKembaliMenu (){
+    public void openKembaliMenu() {
         Intent intent = new Intent(MainMenu.this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void openFormBaru (){
+    public void openFormBaru() {
         Intent intent = new Intent(MainMenu.this, FormBaru.class);
         startActivity(intent);
     }
 
-    public void openDaftarTamu (){
+    public void openDaftarTamu() {
         Intent intent = new Intent(MainMenu.this, DaftarTamu.class);
         startActivity(intent);
     }
 
-    public void openPanduanPengguna (){
+    public void openPanduanPengguna() {
         Intent intent = new Intent(MainMenu.this, PanduanPengguna.class);
         startActivity(intent);
     }
