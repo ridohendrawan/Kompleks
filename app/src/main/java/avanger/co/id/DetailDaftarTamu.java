@@ -24,7 +24,7 @@ public class DetailDaftarTamu extends AppCompatActivity {
         });
     }
 
-    public void openKembaliMenu (){
+    public void openKembaliMenu() {
         Intent intent = new Intent(DetailDaftarTamu.this, DaftarTamu.class);
         startActivity(intent);
     }

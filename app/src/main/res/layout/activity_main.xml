@@ -1,115 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#fff">
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    tools:context="avanger.co.id.MainActivity"
-    android:background="#ffffff">
 
-<!--    <ImageView-->
-<!--        android:layout_width="400dp"-->
-<!--        android:layout_height="250dp"-->
-<!--        android:src="@drawable/logo"-->
-<!--        android:layout_marginTop="50dp"/>-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="avanger.co.id.MainActivity">
 
-<!--    gambar gif //hps aja ganti diatas klau brat-->
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="400dp"
-        android:layout_height="250dp"
-        android:src="@drawable/animation_500_kn6c4th3"
-        android:layout_marginTop="45dp"
-        />
+        <!--    <ImageView-->
+        <!--        android:layout_width="400dp"-->
+        <!--        android:layout_height="250dp"-->
+        <!--        android:src="@drawable/logo"-->
+        <!--        android:layout_marginTop="50dp"/>-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:letterSpacing="0.03"
-        android:text="Hello!"
-        android:textColor="#0d6e6a"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        />
+        <!--    gambar gif //hps aja ganti diatas klau brat-->
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/animation_500_kn6c4th3" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selamat datang di Kompleks!"
-        android:textColor="#0d6e6a"
-        android:textSize="18dp"
-        android:letterSpacing="0.03"
-        android:layout_marginBottom="10dp"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.03"
+            android:text="Hello!"
+            android:textColor="#0d6e6a"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:letterSpacing="0.03"
+            android:text="Selamat datang di Kompleks!"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp" />
 
 
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/forget"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/username"
-        android:inputType="textPersonName"
-        android:hint="Username"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/forget"
-        android:textColor="#0d6e6a"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="20dp"/>
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/forget"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/pass"
-        android:inputType="textPassword"
-        android:hint="Password"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:background="@drawable/forget"
-        android:textColor="#0d6e6a"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="20dp"/>
-
-    <View
-        android:layout_height="2dp"
-        android:layout_width="150dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/darker_gray"/>
-
+        <View
+            android:layout_width="150dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray" />
 
 
-    <Button
-        android:id="@+id/Login"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button"
-        android:text="Login"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="#FFF"
-        android:layout_marginTop="5dp"/>
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button"
+            android:text="Login"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/lupapassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginRight="55dp"
-        android:text="Lupa username/password?"
-        android:textColor="#0d6e6a"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        style="?android:attr/borderlessButtonStyle"/>
+        <Button
+            android:id="@+id/lupapassword"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginBottom="25dp"
+            android:text="Lupa username/password?"
+            android:textColor="#0d6e6a"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
 
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>

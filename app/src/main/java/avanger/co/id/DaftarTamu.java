@@ -13,7 +13,7 @@ public class DaftarTamu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_tamu);
-        Button btnKembaliMenu,btnData1;
+        Button btnKembaliMenu, btnData1;
         btnKembaliMenu = findViewById(R.id.KembaliMenu);
         btnData1 = findViewById(R.id.data1);
 
@@ -32,11 +32,12 @@ public class DaftarTamu extends AppCompatActivity {
         });
     }
 
-    public void openKembaliMenu (){
+    public void openKembaliMenu() {
         Intent intent = new Intent(DaftarTamu.this, MainMenu.class);
         startActivity(intent);
     }
-    public void openData1 (){
+
+    public void openData1() {
         Intent intent = new Intent(DaftarTamu.this, DetailDaftarTamu.class);
         startActivity(intent);
     }
