@@ -67,7 +67,7 @@ class FormBaru : AppCompatActivity() {
         fileKosong?.let {
             val photoUri = FileProvider.getUriForFile(
                     applicationContext,
-                    "avanger.co.id.fileprovider",
+                    getString(R.string.authority),
                     it
             )
 
