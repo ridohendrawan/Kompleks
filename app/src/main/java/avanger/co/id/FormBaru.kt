@@ -3,6 +3,7 @@ package avanger.co.id
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -13,6 +14,8 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
@@ -30,6 +33,7 @@ class FormBaru : AppCompatActivity() {
 
     private var imagePath: String = ""
     private lateinit var database: DatabaseReference
+    private lateinit var storage: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +41,7 @@ class FormBaru : AppCompatActivity() {
 
         // Atur Firebase.
         database = FirebaseDatabase.getInstance().getReference(getString(R.string.firebase_document))
+        storage = FirebaseStorage.getInstance().getReference(getString(R.string.firebase_storage))
 
         // Delegasi listeners.
         btnKembali.setOnClickListener { openKembaliMenu() }
@@ -90,7 +95,7 @@ class FormBaru : AppCompatActivity() {
     @Throws(IOException::class)
     private fun membuatFile(): File? {
         try {
-            val timestamp = (System.currentTimeMillis() / 1000).toString()
+            val timestamp = (System.currentTimeMillis() / 1000L).toString()
             val direktoriPenyimpanan = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
             val gambar = File.createTempFile(timestamp, ".jpg", direktoriPenyimpanan)
 
@@ -114,15 +119,26 @@ class FormBaru : AppCompatActivity() {
         val jamKeluar = 0L
 
         if (nama.isNotBlank() && tujuan.isNotBlank() && plat.isNotBlank() && placeholderGambar.drawable !== null) {
-            val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, imagePath)
-            val tamuId = database.push().key.toString()
+            val gambarCloud = Uri.fromFile(File(imagePath))
+            val ref = storage.child(jamMasuk.toString())
 
-            database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
-                namaTamu.setText("")
-                tujuanTamu.setText("")
-                platTamu.setText("")
-                placeholderGambar.setImageResource(0)
-                Snackbar.make(formbaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+            ref.putFile(gambarCloud).addOnFailureListener {
+                Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+            }.addOnSuccessListener { res ->
+                res.let {
+                    ref.downloadUrl.addOnSuccessListener { uri ->
+                        val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString())
+                        val tamuId = database.push().key.toString()
+
+                        database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
+                            namaTamu.setText("")
+                            tujuanTamu.setText("")
+                            platTamu.setText("")
+                            placeholderGambar.setImageResource(0)
+                            Snackbar.make(formbaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+                        }
+                    }
+                }
             }
         } else {
             Snackbar.make(formbaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
