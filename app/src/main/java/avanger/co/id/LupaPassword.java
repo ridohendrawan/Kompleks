@@ -14,20 +14,8 @@ public class LupaPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lupa_password);
 
-        Button btnKembaliMain;
-        btnKembaliMain = findViewById(R.id.KembaliMain);
+        Button btnKembaliMain = findViewById(R.id.KembaliMain);
 
-        btnKembaliMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMainActivity();
-            }
-        });
-    }
-
-
-    public void openMainActivity() {
-        Intent intent = new Intent(LupaPassword.this, MainActivity.class);
-        startActivity(intent);
+        btnKembaliMain.setOnClickListener((v) -> finish());
     }
 }

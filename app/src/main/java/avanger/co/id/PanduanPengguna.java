@@ -13,19 +13,9 @@ public class PanduanPengguna extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panduan_pengguna);
-        Button btnKembaliMenu;
-        btnKembaliMenu = findViewById(R.id.KembaliMenu);
 
-        btnKembaliMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openKembaliMenu();
-            }
-        });
-    }
+        Button btnKembaliMenu = findViewById(R.id.KembaliMenu);
 
-    public void openKembaliMenu() {
-        Intent intent = new Intent(PanduanPengguna.this, MainMenu.class);
-        startActivity(intent);
+        btnKembaliMenu.setOnClickListener((v) -> finish());
     }
 }

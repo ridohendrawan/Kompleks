@@ -14,43 +14,15 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Button btnKembaliMenu, btnFormBaru, btnDaftarTamu, btnPanduanPengguna;
-        btnKembaliMenu = findViewById(R.id.KembaliMenu);
-        btnFormBaru = findViewById(R.id.formbaru);
-        btnDaftarTamu = findViewById(R.id.daftartamu);
-        btnPanduanPengguna = findViewById(R.id.panduanpengguna);
+        Button btnKembaliMenu = findViewById(R.id.KembaliMenu);
+        Button btnFormBaru = findViewById(R.id.formbaru);
+        Button btnDaftarTamu = findViewById(R.id.daftartamu);
+        Button btnPanduanPengguna = findViewById(R.id.panduanpengguna);
 
-
-        btnKembaliMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openKembaliMenu();
-            }
-        });
-
-        btnFormBaru.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFormBaru();
-            }
-        });
-        btnDaftarTamu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDaftarTamu();
-            }
-        });
-        btnPanduanPengguna.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPanduanPengguna();
-            }
-        });
-    }
-
-    public void openKembaliMenu() {
-        Intent intent = new Intent(MainMenu.this, MainActivity.class);
-        startActivity(intent);
+        btnKembaliMenu.setOnClickListener((v) -> finish());
+        btnFormBaru.setOnClickListener((v) -> openFormBaru());
+        btnDaftarTamu.setOnClickListener((v) -> openDaftarTamu());
+        btnPanduanPengguna.setOnClickListener((v) -> openPanduanPengguna());
     }
 
     public void openFormBaru() {

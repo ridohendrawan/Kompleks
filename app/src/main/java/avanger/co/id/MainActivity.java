@@ -42,31 +42,23 @@ public class MainActivity extends AppCompatActivity {
         passwordText = findViewById(R.id.pass);
         btnLogin = findViewById(R.id.Login);
 
-        btnLupaPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLupaPassword();
-            }
-        });
+        btnLupaPassword.setOnClickListener((v) -> openLupaPassword());
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = loginText.getText().toString();
-                String password = passwordText.getText().toString();
+        btnLogin.setOnClickListener((v) -> {
+            String username = loginText.getText().toString();
+            String password = passwordText.getText().toString();
 
-                // Ketika seorang user berhasil login, setting 'sharedPreference' menjadi true.
-                // Hal ini mencegah login ulang ketika seseorang mengakses aplikasi lagi.
-                // Segi security, aman karena hanya menyimpan boolean variable.
-                if (username.equals("user") && (password.equals("123"))) {
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putBoolean(getString(R.string.preference_isLoggedIn), true);
-                    editor.apply();
+            // Ketika seorang user berhasil login, setting 'sharedPreference' menjadi true.
+            // Hal ini mencegah login ulang ketika seseorang mengakses aplikasi lagi.
+            // Segi security, aman karena hanya menyimpan boolean variable.
+            if (username.equals("user") && (password.equals("123"))) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean(getString(R.string.preference_isLoggedIn), true);
+                editor.apply();
 
-                    openMainMenu();
-                } else {
-                    Toast.makeText(MainActivity.this, "Username / Password Salah.", Toast.LENGTH_SHORT).show();
-                }
+                openMainMenu();
+            } else {
+                Toast.makeText(MainActivity.this, "Username / Password Salah.", Toast.LENGTH_SHORT).show();
             }
         });
 
