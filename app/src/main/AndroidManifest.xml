@@ -24,8 +24,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name="avanger.co.id.FormBaru"></activity>
-        <activity android:name="avanger.co.id.DetailDaftarTamu"></activity>
+        <activity android:name="avanger.co.id.FormBaru" />
+        <activity android:name="avanger.co.id.DetailDaftarTamu" />
         <activity android:name="avanger.co.id.PanduanPengguna" />
         <activity android:name="avanger.co.id.DaftarTamu" />
         <activity android:name="avanger.co.id.MainMenu" />

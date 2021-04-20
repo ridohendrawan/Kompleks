@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class MainMenu extends AppCompatActivity {
@@ -19,7 +18,7 @@ public class MainMenu extends AppCompatActivity {
         Button btnDaftarTamu = findViewById(R.id.daftartamu);
         Button btnPanduanPengguna = findViewById(R.id.panduanpengguna);
 
-        btnKembaliMenu.setOnClickListener((v) -> finish());
+        btnKembaliMenu.setOnClickListener((v) -> finishAndRemoveTask());
         btnFormBaru.setOnClickListener((v) -> openFormBaru());
         btnDaftarTamu.setOnClickListener((v) -> openDaftarTamu());
         btnPanduanPengguna.setOnClickListener((v) -> openPanduanPengguna());
