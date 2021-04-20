@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="avanger.co.id">
 
-    <uses-permission android:name="android.permission.CAMERA" android:requiredFeature="true" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        android:required="true"
+        android:requiredFeature="true" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UAS_Avanger">
         <provider
-            android:authorities="avanger.co.id.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="avanger.co.id.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -34,7 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="avanger.co.id.MainActivity" />
+        <activity
+            android:name="avanger.co.id.MainActivity"
+            android:noHistory="true" />
     </application>
 
 </manifest>
