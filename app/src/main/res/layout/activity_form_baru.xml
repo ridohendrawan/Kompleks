@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/formbaru"
+    android:id="@+id/formBaru"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#0d6e6a">
@@ -151,15 +151,24 @@
             android:layout_width="300dp"
             android:layout_height="2dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray"
             android:backgroundTint="#ffff" />
+
+        <ProgressBar
+            android:id="@+id/formProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateTint="#fff"
+            android:indeterminateTintMode="src_atop"/>
 
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/button3"
             android:text="Submit"

@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
@@ -123,7 +124,9 @@ class FormBaru : AppCompatActivity() {
             val gambarCloud = Uri.fromFile(File(imagePath))
             val ref = storage.child(jamMasuk.toString())
 
-            ref.putFile(gambarCloud).addOnFailureListener {
+            ref.putFile(gambarCloud).addOnProgressListener {
+                formProgress.visibility = View.VISIBLE
+            }.addOnFailureListener {
                 Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
             }.addOnSuccessListener { res ->
                 res.let {
@@ -132,7 +135,9 @@ class FormBaru : AppCompatActivity() {
                         val tamuId = database.push().key.toString()
 
                         database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
-                            Snackbar.make(formbaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+
+                            formProgress.visibility = View.GONE
 
                             Timer().schedule(2000) {
                                 finish()
@@ -142,7 +147,7 @@ class FormBaru : AppCompatActivity() {
                 }
             }
         } else {
-            Snackbar.make(formbaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
+            Snackbar.make(formBaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
         }
     }
 
