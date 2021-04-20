@@ -29,7 +29,8 @@
             android:text="@string/form_baru_title"
             android:textColor="#ffff"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textAllCaps="true" />
 
         <View
             android:layout_width="100dp"
