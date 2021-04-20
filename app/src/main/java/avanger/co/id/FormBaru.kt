@@ -25,6 +25,7 @@ import kotlinx.coroutines.launch
 import java.io.File
 import java.io.IOException
 import java.util.*
+import kotlin.concurrent.schedule
 
 class FormBaru : AppCompatActivity() {
     companion object {
@@ -114,7 +115,7 @@ class FormBaru : AppCompatActivity() {
     private fun handleSubmission() {
         val nama = namaTamu.text.toString()
         val tujuan = tujuanTamu.text.toString()
-        val plat = platTamu.text.toString()
+        val plat = platTamu.text.toString().toUpperCase(Locale.ROOT)
         val jamMasuk = (System.currentTimeMillis() / 1000)
         val jamKeluar = 0L
 
@@ -127,15 +128,15 @@ class FormBaru : AppCompatActivity() {
             }.addOnSuccessListener { res ->
                 res.let {
                     ref.downloadUrl.addOnSuccessListener { uri ->
-                        val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString())
+                        val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true);
                         val tamuId = database.push().key.toString()
 
                         database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
-                            namaTamu.setText("")
-                            tujuanTamu.setText("")
-                            platTamu.setText("")
-                            placeholderGambar.setImageResource(0)
                             Snackbar.make(formbaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+
+                            Timer().schedule(2000) {
+                                finish()
+                            }
                         }
                     }
                 }
@@ -146,6 +147,6 @@ class FormBaru : AppCompatActivity() {
     }
 
     private fun openKembaliMenu() {
-        startActivity(Intent(this@FormBaru, MainMenu::class.java))
+        finish()
     }
 }
