@@ -2,22 +2,20 @@
 
 Sebuah aplikasi yang digunakan untuk melakukan manajemen pengunjung pada suatu kompleks perumahan.
 
-## Todo:
+## Instalasi
 
-Todo akan disusun berdasarkan prioritas, yakni:
+Untuk menggunakan aplikasi untuk development environment, digunakan cara berikut.
 
-- Error-handling pada aplikasi, terutama saat pengisian form.
-- Fitur untuk upload gambar menggunakan Cloud Firestore.
-- Fitur untuk `GET` seluruh data yang berasal dari Firebase dalam bentuk `RecyclerView`.
-- Fitur untuk `GET` detail data yang berasal dari Firebase.
-- Fitur untuk mengatur data menjadi 'sudah keluar kompleks' ketika ditekan.
-- Pengaturan UI dengan menggunakan `ConstraintLayout` untuk masalah responsiveness.
-- Offline functionalities untuk Firebase (caching).
-- Atur Firebase agar menjadi aman dengan peraturan di Firebase Cloud.
-- Lint, Format, dan Aksesibilitas Aplikasi (`a11y`, `i18n`, dan lain sebagainya).
-- Menambah dokumen Git: `LICENSE`, `CONTRIBUTING`, `CHANGELOG`, lengkapi `README`.
+- Pertama, clone repositori dengan komando `git clone https://github.com/ridohendrawan/Kompleks.git`.
+- Kedua, setup Google Firebase, kemudian masukkan file `google-settings.json` pada `Kompleks/app/`. 
+- Alternatif, minta Nicho saja file `google-settings.json`-nya.
+- Ketiga, import (bila belum) dan jalankan di Android Studio IDE.
+- Happy coding.
 
-Ada pula beberapa hal yang dapat menjadi konsiderasi, yakni:
+## Pekerjaan
 
-- Kotlin?
-- Deploy ke Google Play Store?
+Silakan lihat [issues](https://github.com/ridohendrawan/Kompleks/issues).
+
+## Kontribusi
+
+Jangan lupa untuk selalu membuat branch baru ketika ingin menyelesaikan sebuah issue atau permasalahan.
