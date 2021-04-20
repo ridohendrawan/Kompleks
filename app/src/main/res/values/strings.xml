@@ -2,7 +2,14 @@
     <!-- Global -->
     <string name="app_name">Kompleks</string>
 
+    <!-- Content (Main Menu) -->
+    <string name="main_menu_btnOne">Tamu Daftar</string>
+    <string name="main_menu_btnTwo">Tamu Masuk</string>
+    <string name="main_menu_btnThree">Tamu Keluar</string>
+    <string name="main_menu_btnFour">Panduan Penggunaan</string>
+
     <!-- Content (FormBaru) -->
+    <string name="form_baru_title">Tambah Tamu</string>
     <string name="success_upload">Data berhasil ditambahkan!</string>
     <string name="required_fields">Mohon isi seluruh data!</string>
     <string name="internal_error">Ada kesalahan internal pada server!</string>
