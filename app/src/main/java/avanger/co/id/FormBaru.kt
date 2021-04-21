@@ -139,7 +139,7 @@ class FormBaru : AppCompatActivity() {
 
                             formProgress.visibility = View.GONE
 
-                            Timer().schedule(2000) {
+                            Timer().schedule(1000) {
                                 finish()
                             }
                         }.addOnFailureListener {
