@@ -2,6 +2,9 @@
     <!-- Global -->
     <string name="app_name">Kompleks</string>
 
+    <!-- Content (Activity Main) -->
+    <string name="main_fail_auth">Username atau password Anda salah!</string>
+
     <!-- Content (Main Menu) -->
     <string name="main_menu_btnOne">Tamu Daftar</string>
     <string name="main_menu_btnTwo">Tamu Masuk</string>
@@ -24,4 +27,5 @@
     <!-- Firebase -->
     <string name="firebase_document">tamu</string>
     <string name="firebase_storage">foto_tamu</string>
+    <string name="firebase_email">kompleks.avanger.com</string>
 </resources>
