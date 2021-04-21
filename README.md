@@ -16,6 +16,15 @@ Untuk menggunakan aplikasi untuk development environment, digunakan cara berikut
 
 Silakan lihat [issues](https://github.com/ridohendrawan/Kompleks/issues).
 
+## Cara Bekerja
+
+- Lakukan instalasi seperti di atas.
+- Buat branch baru: `git checkout -b nicho/edit-text`.
+- Coding.
+- Push: `git push origin -u nicho/edit-text`. Push ke nama branch, bukan `master`.
+- Buat pull request.
+- Selesai.
+
 ## Kontribusi
 
 Jangan lupa untuk selalu membuat branch baru ketika ingin menyelesaikan sebuah issue atau permasalahan.
