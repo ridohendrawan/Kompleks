@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
@@ -19,9 +20,9 @@ import com.google.firebase.storage.StorageReference
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
+import kotlin.concurrent.schedule
 import kotlinx.android.synthetic.main.activity_form_baru.*
 import kotlinx.coroutines.launch
-
 import java.io.File
 import java.io.IOException
 import java.util.*
@@ -44,7 +45,7 @@ class FormBaru : AppCompatActivity() {
         storage = FirebaseStorage.getInstance().getReference(getString(R.string.firebase_storage))
 
         // Delegasi listeners.
-        btnKembali.setOnClickListener { openKembaliMenu() }
+        btnKembali.setOnClickListener { finish() }
         btnFoto.setOnClickListener { prosesKamera() }
         btnSubmit.setOnClickListener { handleSubmission() }
     }
@@ -114,7 +115,7 @@ class FormBaru : AppCompatActivity() {
     private fun handleSubmission() {
         val nama = namaTamu.text.toString()
         val tujuan = tujuanTamu.text.toString()
-        val plat = platTamu.text.toString()
+        val plat = platTamu.text.toString().toUpperCase(Locale.ROOT)
         val jamMasuk = (System.currentTimeMillis() / 1000)
         val jamKeluar = 0L
 
@@ -122,30 +123,34 @@ class FormBaru : AppCompatActivity() {
             val gambarCloud = Uri.fromFile(File(imagePath))
             val ref = storage.child(jamMasuk.toString())
 
-            ref.putFile(gambarCloud).addOnFailureListener {
-                Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+            ref.putFile(gambarCloud).addOnProgressListener {
+                formProgress.visibility = View.VISIBLE
+            }.addOnFailureListener {
+                formProgress.visibility = View.GONE
+                Toast.makeText(this, getString(R.string.internal_error), Toast.LENGTH_LONG).show()
             }.addOnSuccessListener { res ->
                 res.let {
                     ref.downloadUrl.addOnSuccessListener { uri ->
-                        val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString())
+                        val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
                         val tamuId = database.push().key.toString()
 
                         database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
-                            namaTamu.setText("")
-                            tujuanTamu.setText("")
-                            platTamu.setText("")
-                            placeholderGambar.setImageResource(0)
-                            Snackbar.make(formbaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+
+                            formProgress.visibility = View.GONE
+
+                            Timer().schedule(2000) {
+                                finish()
+                            }
+                        }.addOnFailureListener {
+                            formProgress.visibility = View.GONE
+                            Toast.makeText(this, getString(R.string.internal_error_rdb), Toast.LENGTH_LONG).show()
                         }
                     }
                 }
             }
         } else {
-            Snackbar.make(formbaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
+            Snackbar.make(formBaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
         }
-    }
-
-    private fun openKembaliMenu() {
-        startActivity(Intent(this@FormBaru, MainMenu::class.java))
     }
 }

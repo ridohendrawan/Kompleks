@@ -4,37 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class DaftarTamu extends AppCompatActivity {
+    static {
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_tamu);
-        Button btnKembaliMenu, btnData1;
-        btnKembaliMenu = findViewById(R.id.KembaliMenu);
-        btnData1 = findViewById(R.id.data1);
 
-        btnKembaliMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openKembaliMenu();
-            }
-        });
+        // Atur Firebase.
+        FirebaseDatabase.getInstance();
 
-        btnData1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openData1();
-            }
-        });
-    }
+        Button btnKembaliMenu = findViewById(R.id.KembaliMenu);
+        Button btnData1 = findViewById(R.id.data1);
 
-    public void openKembaliMenu() {
-        Intent intent = new Intent(DaftarTamu.this, MainMenu.class);
-        startActivity(intent);
+        btnKembaliMenu.setOnClickListener((v) -> finish());
+        btnData1.setOnClickListener((v) -> openData1());
     }
 
     public void openData1() {
