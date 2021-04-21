@@ -2,10 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="avanger.co.id">
 
-    <uses-permission
-        android:name="android.permission.CAMERA"
-        android:required="true"
-        android:requiredFeature="true" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
@@ -30,6 +28,7 @@
         <activity android:name="avanger.co.id.DaftarTamu" />
         <activity android:name="avanger.co.id.MainMenu" />
         <activity android:name="avanger.co.id.LupaPassword" />
+        <activity android:name="avanger.co.id.MainActivity" />
         <activity android:name="avanger.co.id.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,9 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="avanger.co.id.MainActivity"
-            android:noHistory="true" />
     </application>
 
 </manifest>
