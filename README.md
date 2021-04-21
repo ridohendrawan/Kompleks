@@ -12,6 +12,10 @@ Untuk menggunakan aplikasi untuk development environment, digunakan cara berikut
 - Ketiga, import (bila belum) dan jalankan di Android Studio IDE.
 - Happy coding.
 
+## Development Account
+
+Silakan login dengan user: `user` dan password: `123456`. Sudah dikoneksikan dengan Firebase Authentication.
+
 ## Pekerjaan
 
 Silakan lihat [issues](https://github.com/ridohendrawan/Kompleks/issues).
