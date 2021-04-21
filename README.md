@@ -21,6 +21,7 @@ Silakan lihat [issues](https://github.com/ridohendrawan/Kompleks/issues).
 - Lakukan instalasi seperti di atas.
 - Buat branch baru: `git checkout -b nicho/edit-text`.
 - Coding.
+- Commit: `git add .`, `git commit -m "Menambah fitur edit text"`.
 - Push: `git push origin -u nicho/edit-text`. Push ke nama branch, bukan `master`.
 - Buat pull request.
 - Selesai.
