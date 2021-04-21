@@ -20,12 +20,12 @@ import com.google.firebase.storage.StorageReference
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
-import kotlin.concurrent.schedule
-import kotlinx.android.synthetic.main.activity_form_baru.*
-import kotlinx.coroutines.launch
 import java.io.File
 import java.io.IOException
 import java.util.*
+import kotlin.concurrent.schedule
+import kotlinx.android.synthetic.main.activity_form_baru.*
+import kotlinx.coroutines.launch
 
 class FormBaru : AppCompatActivity() {
     companion object {

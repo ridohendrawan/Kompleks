@@ -79,12 +79,20 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray" />
 
+        <ProgressBar
+            android:id="@+id/formProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateTint="#000"
+            android:indeterminateTintMode="src_atop"/>
 
         <Button
             android:id="@+id/login"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button"
             android:text="Login"
             android:textColor="#FFF"
