@@ -20,13 +20,12 @@ import com.google.firebase.storage.StorageReference
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
+import kotlin.concurrent.schedule
 import kotlinx.android.synthetic.main.activity_form_baru.*
 import kotlinx.coroutines.launch
-
 import java.io.File
 import java.io.IOException
 import java.util.*
-import kotlin.concurrent.schedule
 
 class FormBaru : AppCompatActivity() {
     companion object {
@@ -46,7 +45,7 @@ class FormBaru : AppCompatActivity() {
         storage = FirebaseStorage.getInstance().getReference(getString(R.string.firebase_storage))
 
         // Delegasi listeners.
-        btnKembali.setOnClickListener { openKembaliMenu() }
+        btnKembali.setOnClickListener { finish() }
         btnFoto.setOnClickListener { prosesKamera() }
         btnSubmit.setOnClickListener { handleSubmission() }
     }
@@ -127,7 +126,8 @@ class FormBaru : AppCompatActivity() {
             ref.putFile(gambarCloud).addOnProgressListener {
                 formProgress.visibility = View.VISIBLE
             }.addOnFailureListener {
-                Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                formProgress.visibility = View.GONE
+                Toast.makeText(this, getString(R.string.internal_error), Toast.LENGTH_LONG).show()
             }.addOnSuccessListener { res ->
                 res.let {
                     ref.downloadUrl.addOnSuccessListener { uri ->
@@ -142,6 +142,9 @@ class FormBaru : AppCompatActivity() {
                             Timer().schedule(2000) {
                                 finish()
                             }
+                        }.addOnFailureListener {
+                            formProgress.visibility = View.GONE
+                            Toast.makeText(this, getString(R.string.internal_error_rdb), Toast.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -149,9 +152,5 @@ class FormBaru : AppCompatActivity() {
         } else {
             Snackbar.make(formBaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
         }
-    }
-
-    private fun openKembaliMenu() {
-        finish()
     }
 }

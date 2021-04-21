@@ -12,7 +12,8 @@
     <string name="form_baru_title">Tambah Tamu</string>
     <string name="success_upload">Data berhasil ditambahkan!</string>
     <string name="required_fields">Mohon isi seluruh data!</string>
-    <string name="internal_error">Ada kesalahan internal pada server!</string>
+    <string name="internal_error">Ada kesalahan internal pada server saat upload gambar! Silakan coba lagi!</string>
+    <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
 
     <!-- Shared Preferences -->
     <string name="preference_isLoggedIn">avanger.co.id.isLoggedIn</string>
