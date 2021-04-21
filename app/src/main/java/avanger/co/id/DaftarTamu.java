@@ -9,9 +9,6 @@ import android.widget.Button;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class DaftarTamu extends AppCompatActivity {
-    static {
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
