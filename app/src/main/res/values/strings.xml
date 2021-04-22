@@ -8,6 +8,7 @@
     <!-- Content (Daftar Tamu) -->
     <string name="daftar_tamu_title">Tamu Masuk</string>
     <string name="daftar_tamu_sample">Data</string>
+    <string name="daftar_tamu_confirm">List tamu yang masih di dalam kompleks.</string>
 
     <!-- Content (Main Menu) -->
     <string name="main_menu_btnOne">Tamu Daftar</string>

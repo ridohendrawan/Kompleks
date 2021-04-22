@@ -10,8 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_daftar_tamu.*
+import kotlinx.android.synthetic.main.item.*
 
 class DaftarTamu : AppCompatActivity() {
     private lateinit var adapter: FirebaseRecyclerAdapter<Tamu, TamuHolder>
@@ -24,6 +26,9 @@ class DaftarTamu : AppCompatActivity() {
         tamuRecyclerView.layoutManager = LinearLayoutManager(this)
         adapter = tamuAdapter(this)
         tamuRecyclerView.adapter = adapter
+
+        // Snackbar.
+        Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_confirm), Snackbar.LENGTH_LONG).show()
 
         // Delegasi listeners.
         returnBtn.setOnClickListener { finish() }
