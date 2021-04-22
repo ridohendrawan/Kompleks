@@ -14,16 +14,29 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_daftar_tamu.*
 
 class DaftarTamu : AppCompatActivity() {
+    private lateinit var adapter: FirebaseRecyclerAdapter<Tamu, TamuHolder>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar_tamu)
 
         // RecyclerView.
         tamuRecyclerView.layoutManager = LinearLayoutManager(this)
-        tamuRecyclerView.adapter = tamuAdapter(this)
+        adapter = tamuAdapter(this)
+        tamuRecyclerView.adapter = adapter
 
         // Delegasi listeners.
         returnBtn.setOnClickListener { finish() }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        adapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        adapter.stopListening()
     }
 
     private fun tamuAdapter(ctx: Context): FirebaseRecyclerAdapter<Tamu, TamuHolder> {
