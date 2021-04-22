@@ -16,6 +16,17 @@
     <string name="main_menu_btnThree">Tamu Keluar</string>
     <string name="main_menu_btnFour">Panduan Penggunaan</string>
 
+    <!-- Content (Detail Tamu) -->
+    <string name="detail_tamu_title">Detail Tamu Masuk</string>
+    <string name="detail_tamu_name">Nama Tamu</string>
+    <string name="detail_tamu_tujuan">Tujuan Kunjungan</string>
+    <string name="detail_tamu_plat">Plat Nomor Kendaraan</string>
+    <string name="detail_tamu_jamMasuk">Jam Masuk</string>
+    <string name="detail_tamu_jamKeluar">Jam Keluar</string>
+    <string name="detail_tamu_foto">Foto</string>
+    <string name="detail_tamu_fotoDesc">Gambar Foto KTP</string>
+    <string name="detail_tamu_submit">Kunjungan Selesai!</string>
+
     <!-- Content (FormBaru) -->
     <string name="form_baru_title">Tambah Tamu</string>
     <string name="success_upload">Data berhasil ditambahkan!</string>

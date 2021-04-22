@@ -4,18 +4,18 @@
     android:layout_height="fill_parent"
     android:background="#0d6e6a">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/KembaliMenu"
+            android:id="@+id/btnKembali"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/arrow_left" />
 
@@ -24,10 +24,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:letterSpacing="0.03"
-            android:text="DETAIL FORM TAMU"
+            android:text="@string/detail_tamu_title"
             android:textColor="#ffff"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAllCaps="true" />
 
         <View
             android:layout_width="100dp"
@@ -40,133 +41,133 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="70dp"
             android:letterSpacing="0.03"
-            android:text="Nama Tamu"
+            android:text="@string/detail_tamu_name"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/detailTamuName"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/forget2"
-            android:hint="Nama Tamu"
-            android:inputType="textPersonName"
+            android:hint="@string/detail_tamu_name"
             android:paddingLeft="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="8dp"
-            android:letterSpacing="0.03"
-            android:text="Tujuan Kunjugan"
-            android:textColor="#ffff"
-            android:textSize="15dp" />
-
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/forget2"
-            android:hint="Tujuan Kunjugan"
-            android:inputType="textPersonName"
-            android:paddingLeft="20dp"
-            android:textColor="#0d6e6a"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="70dp"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.03"
-            android:text="Plat Nomor Kendaraan"
+            android:text="@string/detail_tamu_tujuan"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/detailTamuTujuan"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/forget2"
-            android:hint="Plat Nomor Kendaraan"
-            android:inputType="textPersonName"
+            android:hint="@string/detail_tamu_tujuan"
             android:paddingLeft="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="70dp"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.03"
-            android:text="Jam Masuk"
+            android:text="@string/detail_tamu_plat"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/detailTamuPlat"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/forget2"
-            android:hint="13:00 - 07-04-2021"
-            android:inputType="textPersonName"
+            android:hint="@string/detail_tamu_plat"
             android:paddingLeft="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="70dp"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.03"
-            android:text="Jam Keluar"
+            android:text="@string/detail_tamu_jamMasuk"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/detailTamuJamMasuk"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/forget2"
-            android:hint="17:00 - 07-04-2021"
-            android:inputType="textPersonName"
+            android:hint="@string/detail_tamu_jamMasuk"
             android:paddingLeft="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="70dp"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.03"
-            android:text="File Gambar"
+            android:text="@string/detail_tamu_jamKeluar"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/detailTamuJamKeluar"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/forget2"
+            android:hint="@string/detail_tamu_jamKeluar"
+            android:paddingLeft="20dp"
+            android:textColor="#0d6e6a"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="@string/detail_tamu_foto"
+            android:textColor="#ffff"
+            android:textSize="15sp" />
 
         <ImageView
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
+            android:contentDescription="@string/detail_tamu_fotoDesc"
             android:src="@drawable/samplektp" />
 
         <View
@@ -214,11 +215,10 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="35dp"
             android:background="@drawable/button3"
-            android:text="KUNJUGAN SELESAI!"
+            android:text="@string/detail_tamu_submit"
             android:textColor="#FFF"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
-
 
     </LinearLayout>
 </ScrollView>
