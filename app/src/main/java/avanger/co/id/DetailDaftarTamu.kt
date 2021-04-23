@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_daftar_tamu.*
 import java.util.*
 import kotlin.collections.HashMap
@@ -26,6 +27,9 @@ class DetailDaftarTamu : AppCompatActivity() {
             detailTamuTujuan.text = tamu.tujuanKunjungan
             detailTamuPlat.text = tamu.platTamu
             detailTamuJamMasuk.text = Utilities.unixToTime(tamu.jamMasuk)
+
+            // Lazy-load image into the imageView.
+            Picasso.get().load(tamu.photo).resize(1000, 800).into(fotoTamu)
 
             // Setup Firebase.
             database = FirebaseDatabase.getInstance().reference
