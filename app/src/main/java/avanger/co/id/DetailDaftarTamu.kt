@@ -25,8 +25,7 @@ class DetailDaftarTamu : AppCompatActivity() {
             detailTamuName.text = tamu.namaTamu
             detailTamuTujuan.text = tamu.tujuanKunjungan
             detailTamuPlat.text = tamu.platTamu
-            detailTamuJamMasuk.text = tamu.jamMasuk.toString()
-            detailTamuJamKeluar.text = tamu.jamKeluar.toString()
+            detailTamuJamMasuk.text = Utilities.unixToTime(tamu.jamMasuk)
 
             // Setup Firebase.
             database = FirebaseDatabase.getInstance().reference
