@@ -131,8 +131,8 @@ class FormBaru : AppCompatActivity() {
             }.addOnSuccessListener { res ->
                 res.let {
                     ref.downloadUrl.addOnSuccessListener { uri ->
-                        val tamu = Tamu(nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
                         val tamuId = database.push().key.toString()
+                        val tamu = Tamu(tamuId, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
 
                         database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
                             Snackbar.make(formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
