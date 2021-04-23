@@ -5,11 +5,27 @@
     <!-- Content (Activity Main) -->
     <string name="main_fail_auth">Username atau password Anda salah!</string>
 
+    <!-- Content (Daftar Tamu) -->
+    <string name="daftar_tamu_title">Tamu Masuk</string>
+    <string name="daftar_tamu_sample">Data</string>
+    <string name="daftar_tamu_confirm">List tamu yang masih di dalam kompleks.</string>
+
     <!-- Content (Main Menu) -->
     <string name="main_menu_btnOne">Tamu Daftar</string>
     <string name="main_menu_btnTwo">Tamu Masuk</string>
     <string name="main_menu_btnThree">Tamu Keluar</string>
     <string name="main_menu_btnFour">Panduan Penggunaan</string>
+
+    <!-- Content (Detail Tamu) -->
+    <string name="detail_tamu_title">Detail Tamu Masuk</string>
+    <string name="detail_tamu_name">Nama Tamu</string>
+    <string name="detail_tamu_tujuan">Tujuan Kunjungan</string>
+    <string name="detail_tamu_plat">Plat Nomor Kendaraan</string>
+    <string name="detail_tamu_jamMasuk">Jam Masuk</string>
+    <string name="detail_tamu_jamKeluar">Jam Keluar</string>
+    <string name="detail_tamu_foto">Foto</string>
+    <string name="detail_tamu_fotoDesc">Gambar Foto KTP</string>
+    <string name="detail_tamu_submit">Kunjungan Selesai!</string>
 
     <!-- Content (FormBaru) -->
     <string name="form_baru_title">Tambah Tamu</string>

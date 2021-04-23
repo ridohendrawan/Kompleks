@@ -1,85 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#0d6e6a">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/daftarTamu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0d6e6a"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <Button
+        android:id="@+id/returnBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/arrow_left" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:letterSpacing="0.03"
+        android:text="@string/daftar_tamu_title"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/darker_gray"
+        android:backgroundTint="#ffff" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tamuRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#0d6e6a"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/KembaliMenu"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/arrow_left" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:letterSpacing="0.03"
-            android:text="DAFTAR TAMU"
-            android:textColor="#ffff"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@android:color/darker_gray"
-            android:backgroundTint="#ffff" />
-
-        <Button
-            android:id="@+id/data1"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/button4"
-            android:text="data 1"
-            android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/button4"
-            android:text="data 2"
-            android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/button4"
-            android:text="data 3"
-            android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/button4"
-            android:text="data 4"
-            android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
-</ScrollView>
+        android:layout_height="wrap_content" />
+</LinearLayout>
