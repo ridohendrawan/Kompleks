@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_daftar_tamu.*
 import kotlinx.android.synthetic.main.item.*
@@ -56,7 +57,6 @@ class DaftarTamu : AppCompatActivity() {
                 .setLifecycleOwner(this)
                 .setQuery(query, Tamu::class.java)
                 .build()
-        progressBar.visibility = View.GONE
 
         // Returns a closure containing 'FirebaseRecyclerAdapter'.
         return object : FirebaseRecyclerAdapter<Tamu, TamuHolder>(options) {
@@ -76,6 +76,16 @@ class DaftarTamu : AppCompatActivity() {
                     intent.putExtra("tamu", model)
                     ctx.startActivity(intent)
                 }
+            }
+
+            override fun onDataChanged() {
+                super.onDataChanged()
+                progressBar.visibility = View.GONE
+            }
+
+            override fun onError(error: DatabaseError) {
+                super.onError(error)
+                Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
             }
         }
     }
