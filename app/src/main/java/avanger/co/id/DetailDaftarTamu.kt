@@ -32,7 +32,7 @@ class DetailDaftarTamu : AppCompatActivity() {
             Picasso.get().load(tamu.photo).resize(1000, 800).into(fotoTamu)
 
             // Setup Firebase.
-            database = FirebaseDatabase.getInstance().reference
+            database = FirebaseUtils.getFirebaseInstance().reference
         }
 
         // Delegate listeners.

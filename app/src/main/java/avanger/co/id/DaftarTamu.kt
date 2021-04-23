@@ -47,7 +47,7 @@ class DaftarTamu : AppCompatActivity() {
 
     private fun tamuAdapter(ctx: Context): FirebaseRecyclerAdapter<Tamu, TamuHolder> {
         // FirebaseUI preparations.
-        val database = FirebaseDatabase.getInstance().reference
+        val database = FirebaseUtils.getFirebaseInstance().reference
         val query = database
                 .child(getString(R.string.firebase_document))
                 .child(getString(R.string.firebase_document))
