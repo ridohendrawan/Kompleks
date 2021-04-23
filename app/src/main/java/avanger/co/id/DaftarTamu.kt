@@ -56,14 +56,13 @@ class DaftarTamu : AppCompatActivity() {
                 .setLifecycleOwner(this)
                 .setQuery(query, Tamu::class.java)
                 .build()
+        progressBar.visibility = View.GONE
 
         // Returns a closure containing 'FirebaseRecyclerAdapter'.
         return object : FirebaseRecyclerAdapter<Tamu, TamuHolder>(options) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TamuHolder {
                 val view = LayoutInflater.from(parent.context)
                         .inflate(R.layout.item, parent, false)
-
-                progressBar.visibility = View.GONE
 
                 return TamuHolder(view)
             }

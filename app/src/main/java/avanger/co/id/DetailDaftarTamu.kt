@@ -35,24 +35,24 @@ class DetailDaftarTamu : AppCompatActivity() {
         // Delegate listeners.
         btnKembali.setOnClickListener { finish() }
         btnSubmit.setOnClickListener {
-            val currentItem = tamu?.idTamu?.let { id ->
-                database.child(getString(R.string.firebase_document))
+            tamu?.idTamu?.let { id ->
+                val currentItem = database.child(getString(R.string.firebase_document))
                         .child(getString(R.string.firebase_document))
                         .child(id)
-            }
 
-            val updatedData = HashMap<String, Any>()
-            updatedData["jamKeluar"] = System.currentTimeMillis() / 1000L
-            updatedData["didalamKompleks"] = false;
+                val updatedData = HashMap<String, Any>()
+                updatedData["jamKeluar"] = System.currentTimeMillis() / 1000L
+                updatedData["didalamKompleks"] = false;
 
-            currentItem?.updateChildren(updatedData)?.addOnCompleteListener {
-                Snackbar.make(detailDaftarTamu, getString(R.string.detail_tamu_success), Snackbar.LENGTH_LONG).show()
+                currentItem.updateChildren(updatedData).addOnCompleteListener {
+                    Snackbar.make(detailDaftarTamu, getString(R.string.detail_tamu_success), Snackbar.LENGTH_LONG).show()
 
-                Timer().schedule(1000) {
-                    finish()
+                    Timer().schedule(1000) {
+                        finish()
+                    }
+                }.addOnFailureListener {
+                    Snackbar.make(detailDaftarTamu, getString(R.string.detail_tamu_failed), Snackbar.LENGTH_LONG).show()
                 }
-            }?.addOnFailureListener {
-                Snackbar.make(detailDaftarTamu, getString(R.string.detail_tamu_failed), Snackbar.LENGTH_LONG).show()
             }
         }
     }
