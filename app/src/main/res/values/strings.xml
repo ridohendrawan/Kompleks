@@ -26,6 +26,8 @@
     <string name="detail_tamu_foto">Foto</string>
     <string name="detail_tamu_fotoDesc">Gambar Foto KTP</string>
     <string name="detail_tamu_submit">Kunjungan Selesai!</string>
+    <string name="detail_tamu_success">Data berhasil diupdate!</string>
+    <string name="detail_tamu_failed">Ada kesalahan internal! Silakan coba lagi!</string>
 
     <!-- Content (FormBaru) -->
     <string name="form_baru_title">Tambah Tamu</string>
