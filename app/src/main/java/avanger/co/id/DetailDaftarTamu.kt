@@ -39,11 +39,9 @@ class DetailDaftarTamu : AppCompatActivity() {
         btnKembali.setOnClickListener { finish() }
         btnSubmit.setOnClickListener {
             tamu?.idTamu?.let { id ->
-                val currentItem = database.child(getString(R.string.firebase_document))
-                        .child(getString(R.string.firebase_document))
-                        .child(id)
-
+                val currentItem = database.child(getString(R.string.firebase_document)).child(id)
                 val updatedData = HashMap<String, Any>()
+
                 updatedData["jamKeluar"] = System.currentTimeMillis() / 1000L
                 updatedData["didalamKompleks"] = false;
 

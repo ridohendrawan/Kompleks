@@ -41,7 +41,7 @@ class FormBaru : AppCompatActivity() {
         setContentView(R.layout.activity_form_baru)
 
         // Atur Firebase.
-        database = FirebaseUtils.getFirebaseInstance().getReference(getString(R.string.firebase_document))
+        database = FirebaseUtils.getFirebaseInstance().reference
         storage = FirebaseStorage.getInstance().getReference(getString(R.string.firebase_storage))
 
         // Delegasi listeners.
