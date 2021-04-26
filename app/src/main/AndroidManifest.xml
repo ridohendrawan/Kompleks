@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UAS_Avanger">
+        <activity android:name=".DetailDaftarSeluruhTamu"></activity>
+        <activity android:name=".DaftarTamuKeluar" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="avanger.co.id.fileprovider"
@@ -22,14 +25,14 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name="avanger.co.id.FormBaru" />
-        <activity android:name="avanger.co.id.DetailDaftarTamu" />
-        <activity android:name="avanger.co.id.PanduanPengguna" />
-        <activity android:name="avanger.co.id.DaftarTamu" />
-        <activity android:name="avanger.co.id.MainMenu" />
-        <activity android:name="avanger.co.id.LupaPassword" />
-        <activity android:name="avanger.co.id.MainActivity" />
-        <activity android:name="avanger.co.id.SplashScreen">
+        <activity android:name=".FormBaru" />
+        <activity android:name=".DetailDaftarTamu" />
+        <activity android:name=".PanduanPengguna" />
+        <activity android:name=".DaftarTamuMasuk" />
+        <activity android:name=".MainMenu" />
+        <activity android:name=".LupaPassword" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
