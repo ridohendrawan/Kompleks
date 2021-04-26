@@ -75,7 +75,7 @@ class DaftarTamuKeluar : AppCompatActivity() {
                 holder.tvPlat.text = model.platTamu
 
                 holder.dataHolder.setOnClickListener {
-                    val intent = Intent(ctx, DetailDaftarTamu::class.java)
+                    val intent = Intent(ctx, DetailTamuKeluar::class.java)
                     intent.putExtra("tamu", model)
                     ctx.startActivity(intent)
                 }

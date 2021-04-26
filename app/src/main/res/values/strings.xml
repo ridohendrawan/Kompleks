@@ -27,6 +27,9 @@
     <string name="detail_tamu_jamMasuk">Jam Masuk</string>
     <string name="detail_tamu_jamKeluar">Jam Keluar</string>
     <string name="detail_tamu_foto">Foto</string>
+    <string name="detail_tamu_status">Status</string>
+    <string name="detail_tamu_status_done">Tamu sudah selesai!</string>
+    <string name="detail_tamu_status_nope">Tamu belum selesai!</string>
     <string name="detail_tamu_fotoDesc">Gambar Foto KTP</string>
     <string name="detail_tamu_submit">Kunjungan Selesai!</string>
     <string name="detail_tamu_success">Data berhasil diupdate!</string>
