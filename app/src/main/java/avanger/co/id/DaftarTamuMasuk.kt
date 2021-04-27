@@ -1,29 +1,32 @@
 package avanger.co.id
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.firebase.ui.database.FirebaseRecyclerAdapter
-import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DatabaseError
+import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_daftar_tamu_masuk.*
 
 class DaftarTamuMasuk : AppCompatActivity() {
-    private lateinit var adapter: FirebaseRecyclerAdapter<Tamu, TamuHolder>
+    private lateinit var adapter: FirestoreRecyclerAdapter<Tamu, TamuHolder>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar_tamu_masuk)
 
+        // Initialize adapter.
+        adapter = tamuAdapter()
+
         // RecyclerView.
         tamuRecyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = tamuAdapter(this)
         tamuRecyclerView.adapter = adapter
 
         // Snackbar.
@@ -43,17 +46,16 @@ class DaftarTamuMasuk : AppCompatActivity() {
         adapter.stopListening()
     }
 
-    private fun tamuAdapter(ctx: Context): FirebaseRecyclerAdapter<Tamu, TamuHolder> {
-        // FirebaseUI preparations.
-        val database = FirebaseUtils.getFirebaseInstance().reference
-        val query = database.child(getString(R.string.firebase_document)).orderByChild("didalamKompleks").equalTo(true)
-        val options = FirebaseRecyclerOptions.Builder<Tamu>()
+    private fun tamuAdapter(): FirestoreRecyclerAdapter<Tamu, TamuHolder> {
+        val db = Firebase.firestore.collection(getString(R.string.firebase_document))
+        val query = db.orderBy("jamMasuk", Query.Direction.DESCENDING)
+        val options = FirestoreRecyclerOptions.Builder<Tamu>()
                 .setLifecycleOwner(this)
                 .setQuery(query, Tamu::class.java)
                 .build()
 
         // Returns a closure containing 'FirebaseRecyclerAdapter'.
-        return object : FirebaseRecyclerAdapter<Tamu, TamuHolder>(options) {
+        return object : FirestoreRecyclerAdapter<Tamu, TamuHolder>(options) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TamuHolder {
                 val view = LayoutInflater.from(parent.context)
                         .inflate(R.layout.item, parent, false)
@@ -62,14 +64,7 @@ class DaftarTamuMasuk : AppCompatActivity() {
             }
 
             override fun onBindViewHolder(holder: TamuHolder, position: Int, model: Tamu) {
-                holder.tvNama.text = model.namaTamu
-                holder.tvPlat.text = model.platTamu
-
-                holder.dataHolder.setOnClickListener {
-                    val intent = Intent(ctx, DetailDaftarTamu::class.java)
-                    intent.putExtra("tamu", model)
-                    ctx.startActivity(intent)
-                }
+                holder.bindTamuMasuk(model)
             }
 
             override fun onDataChanged() {
@@ -77,8 +72,8 @@ class DaftarTamuMasuk : AppCompatActivity() {
                 progressBar.visibility = View.GONE
             }
 
-            override fun onError(error: DatabaseError) {
-                super.onError(error)
+            override fun onError(e: FirebaseFirestoreException) {
+                super.onError(e)
                 Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
             }
         }

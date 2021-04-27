@@ -1,6 +1,5 @@
 package avanger.co.id
 
-import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.widget.TextView
@@ -11,7 +10,7 @@ class TamuHolder(view: View) : RecyclerView.ViewHolder(view) {
     val tvPlat: TextView = view.findViewById(R.id.platNomor)
     val dataHolder: View = view.findViewById(R.id.dataHolder)
 
-    fun bind(tamu: Tamu, context: Context) {
+    fun bindTamuMasuk(tamu: Tamu) {
         tvNama.text = tamu.namaTamu
         tvPlat.text = tamu.platTamu
 
