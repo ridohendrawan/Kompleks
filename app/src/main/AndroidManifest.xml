@@ -26,7 +26,7 @@
         </provider>
 
         <activity android:name=".FormBaru" />
-        <activity android:name=".DetailDaftarTamu" />
+        <activity android:name=".DetailTamuMasuk" />
         <activity android:name=".PanduanPengguna" />
         <activity android:name=".DaftarTamuMasuk" />
         <activity android:name=".MainMenu" />

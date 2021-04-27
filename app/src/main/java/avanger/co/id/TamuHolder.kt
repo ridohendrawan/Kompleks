@@ -15,7 +15,7 @@ class TamuHolder(view: View) : RecyclerView.ViewHolder(view) {
         tvPlat.text = tamu.platTamu
 
         itemView.setOnClickListener {
-            val intent = Intent(itemView.context, DetailDaftarTamu::class.java)
+            val intent = Intent(itemView.context, DetailTamuMasuk::class.java)
             intent.putExtra("tamu", tamu)
             itemView.context.startActivity(intent)
         }
