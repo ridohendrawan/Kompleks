@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
+import avanger.co.id.databinding.ActivityFormBaruBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -19,12 +20,11 @@ import com.google.firebase.storage.ktx.storage
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
+import kotlinx.coroutines.launch
 import java.io.File
 import java.io.IOException
 import java.util.*
 import kotlin.concurrent.schedule
-import kotlinx.android.synthetic.main.activity_form_baru.*
-import kotlinx.coroutines.launch
 
 class FormBaru : AppCompatActivity() {
     companion object {
@@ -32,15 +32,17 @@ class FormBaru : AppCompatActivity() {
     }
 
     private var imagePath: String = ""
+    private lateinit var binding: ActivityFormBaruBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_form_baru)
+        binding = ActivityFormBaruBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Delegasi listeners.
-        btnKembali.setOnClickListener { finish() }
-        btnFoto.setOnClickListener { prosesKamera() }
-        btnSubmit.setOnClickListener { handleSubmission() }
+        binding.btnKembali.setOnClickListener { finish() }
+        binding.btnFoto.setOnClickListener { prosesKamera() }
+        binding.btnSubmit.setOnClickListener { handleSubmission() }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -55,7 +57,7 @@ class FormBaru : AppCompatActivity() {
                         default(quality = 10, format = Bitmap.CompressFormat.JPEG)
                         destination(gambar)
                     }.let {
-                        placeholderGambar.setImageBitmap(BitmapFactory.decodeFile(it.absolutePath))
+                        binding.placeholderGambar.setImageBitmap(BitmapFactory.decodeFile(it.absolutePath))
                     }
                 }
             }
@@ -111,20 +113,20 @@ class FormBaru : AppCompatActivity() {
         val storage = Firebase.storage
 
         // Parse input.
-        val nama = namaTamu.text.toString()
-        val tujuan = tujuanTamu.text.toString()
-        val plat = platTamu.text.toString().toUpperCase(Locale.ROOT)
+        val nama = binding.namaTamu.text.toString()
+        val tujuan = binding.tujuanTamu.text.toString()
+        val plat = binding.platTamu.text.toString().toUpperCase(Locale.ROOT)
         val jamMasuk = (System.currentTimeMillis() / 1000)
         val jamKeluar = 0L
 
-        if (nama.isNotBlank() && tujuan.isNotBlank() && plat.isNotBlank() && placeholderGambar.drawable !== null) {
+        if (nama.isNotBlank() && tujuan.isNotBlank() && plat.isNotBlank() && binding.placeholderGambar.drawable !== null) {
             val gambarCloud = Uri.fromFile(File(imagePath))
             val ref = storage.reference.child(getString(R.string.firebase_storage)).child(jamMasuk.toString())
 
             ref.putFile(gambarCloud).addOnProgressListener {
-                formProgress.visibility = View.VISIBLE
+                binding.formProgress.visibility = View.VISIBLE
             }.addOnFailureListener {
-                formProgress.visibility = View.GONE
+                binding.formProgress.visibility = View.GONE
                 Toast.makeText(this, getString(R.string.internal_error), Toast.LENGTH_LONG).show()
             }.addOnSuccessListener { res ->
                 res.let {
@@ -134,22 +136,22 @@ class FormBaru : AppCompatActivity() {
                         val tamuRef = db.collection(getString(R.string.firebase_document)).document(uuid)
 
                         tamuRef.set(tamu).addOnSuccessListener {
-                            Snackbar.make(formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(binding.formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
 
-                            formProgress.visibility = View.GONE
+                            binding.formProgress.visibility = View.GONE
 
                             Timer().schedule(1000) {
                                 finish()
                             }
                         }.addOnFailureListener {
-                            formProgress.visibility = View.GONE
+                            binding.formProgress.visibility = View.GONE
                             Toast.makeText(this, getString(R.string.internal_error_rdb), Toast.LENGTH_LONG).show()
                         }
                     }
                 }
             }
         } else {
-            Snackbar.make(formBaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
+            Snackbar.make(binding.formBaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
         }
     }
 }
