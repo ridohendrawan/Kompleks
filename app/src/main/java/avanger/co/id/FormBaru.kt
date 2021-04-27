@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import id.zelory.compressor.Compressor
@@ -33,7 +33,6 @@ class FormBaru : AppCompatActivity() {
     }
 
     private var imagePath: String = ""
-    private lateinit var database: DatabaseReference
     private lateinit var storage: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +40,6 @@ class FormBaru : AppCompatActivity() {
         setContentView(R.layout.activity_form_baru)
 
         // Atur Firebase.
-        database = FirebaseUtils.getFirebaseInstance().reference
         storage = FirebaseStorage.getInstance().getReference(getString(R.string.firebase_storage))
 
         // Delegasi listeners.
@@ -113,6 +111,7 @@ class FormBaru : AppCompatActivity() {
      * Fungsi untuk melakukan submission handling.
      */
     private fun handleSubmission() {
+        val db = Firebase.firestore
         val nama = namaTamu.text.toString()
         val tujuan = tujuanTamu.text.toString()
         val plat = platTamu.text.toString().toUpperCase(Locale.ROOT)
@@ -131,10 +130,11 @@ class FormBaru : AppCompatActivity() {
             }.addOnSuccessListener { res ->
                 res.let {
                     ref.downloadUrl.addOnSuccessListener { uri ->
-                        val tamuId = database.push().key.toString()
-                        val tamu = Tamu(tamuId, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
+                        val uuid = UUID.randomUUID().toString()
+                        val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
+                        val tamuRef = db.collection(getString(R.string.firebase_document)).document(uuid)
 
-                        database.child(getString(R.string.firebase_document)).child(tamuId).setValue(tamu).addOnCompleteListener {
+                        tamuRef.set(tamu).addOnSuccessListener {
                             Snackbar.make(formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
 
                             formProgress.visibility = View.GONE
