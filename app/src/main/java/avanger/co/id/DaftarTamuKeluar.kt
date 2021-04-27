@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_daftar_tamu_keluar.*
 import java.lang.Exception
 
 class DaftarTamuKeluar : AppCompatActivity() {
-     private lateinit var adapter: FirestorePagingAdapter<Tamu, TamuHolder>
+    private lateinit var adapter: FirestorePagingAdapter<Tamu, TamuHolder>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
