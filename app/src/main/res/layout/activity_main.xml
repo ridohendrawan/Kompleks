@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_main_view"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="avanger.co.id.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context="avanger.co.id.MainActivity">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!--    <ImageView-->
-        <!--        android:layout_width="400dp"-->
-        <!--        android:layout_height="250dp"-->
-        <!--        android:src="@drawable/logo"-->
-        <!--        android:layout_marginTop="50dp"/>-->
-
-        <!--    gambar gif //hps aja ganti diatas klau brat-->
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="400dp"
             android:layout_height="250dp"
@@ -29,9 +29,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="0.03"
-            android:text="Hello!"
+            android:text="@string/main_hello"
             android:textColor="#0d6e6a"
-            android:textSize="35dp"
+            android:textSize="35sp"
             android:textStyle="bold" />
 
         <TextView
@@ -39,22 +39,23 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:letterSpacing="0.03"
-            android:text="Selamat datang di Kompleks!"
+            android:text="@string/main_welcome"
             android:textColor="#0d6e6a"
-            android:textSize="18dp" />
-
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/username"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
+            android:autofillHints="@string/main_uname"
             android:background="@drawable/forget"
-            android:hint="Username"
+            android:hint="@string/main_uname"
             android:inputType="textPersonName"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <EditText
@@ -63,12 +64,14 @@
             android:layout_height="45dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/forget"
-            android:hint="Password"
+            android:hint="@string/main_password"
             android:inputType="textPassword"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:autofillHints="@string/main_password" />
 
         <View
             android:layout_width="150dp"
@@ -92,9 +95,9 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button"
-            android:text="Login"
+            android:text="@string/main_login"
             android:textColor="#FFF"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
@@ -102,15 +105,14 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_marginTop="0dp"
-            android:layout_marginRight="55dp"
+            android:layout_marginEnd="55dp"
             android:layout_marginBottom="25dp"
-            android:text="Lupa username/password?"
+            android:text="@string/main_forget"
             android:textColor="#0d6e6a"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textStyle="bold" />
-
-
     </LinearLayout>
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

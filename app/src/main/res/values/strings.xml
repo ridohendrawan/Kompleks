@@ -3,7 +3,13 @@
     <string name="app_name">Kompleks</string>
 
     <!-- Content (Activity Main) -->
+    <string name="main_hello">Hello!</string>
+    <string name="main_welcome">Selamat datang di Kompleks!</string>
     <string name="main_fail_auth">Username atau password Anda salah!</string>
+    <string name="main_uname">Username</string>
+    <string name="main_password">Password</string>
+    <string name="main_login">Login</string>
+    <string name="main_forget">Lupa username / password?</string>
 
     <!-- Content (Daftar Tamu) -->
     <string name="daftar_tamu_title">Tamu Masuk</string>
