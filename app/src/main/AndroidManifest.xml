@@ -30,22 +30,15 @@
         <activity android:name=".PanduanPengguna" />
         <activity android:name=".DaftarTamuMasuk" />
         <activity android:name=".MainMenu" />
-
-        <activity
-            android:name=".LupaPassword"
-            android:theme="@style/Theme.UAS_Avanger_White" />
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.UAS_Avanger_White" />
-        <activity
-            android:name=".SplashScreen"
-            android:theme="@style/Theme.UAS_Avanger_White">
+        <activity android:name=".LupaPassword" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+
 </manifest>
