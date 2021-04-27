@@ -3,17 +3,14 @@ package avanger.co.id
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_daftar_tamu.*
 import java.util.*
-import kotlin.collections.HashMap
 import kotlin.concurrent.schedule
 
-class DetailDaftarTamu : AppCompatActivity() {
-    private lateinit var database: DatabaseReference
-
+class DetailTamuMasuk : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_daftar_tamu)
@@ -30,22 +27,20 @@ class DetailDaftarTamu : AppCompatActivity() {
 
             // Lazy-load image into the imageView.
             Picasso.get().load(tamu.photo).resize(1000, 800).into(fotoTamu)
-
-            // Setup Firebase.
-            database = FirebaseUtils.getFirebaseInstance().reference
         }
 
         // Delegate listeners.
         btnKembali.setOnClickListener { finish() }
         btnSubmit.setOnClickListener {
             tamu?.idTamu?.let { id ->
-                val currentItem = database.child(getString(R.string.firebase_document)).child(id)
-                val updatedData = HashMap<String, Any>()
+                val database = Firebase.firestore
+                val currentItem =  database.collection(getString(R.string.firebase_document)).document(id)
+                val updatedData = hashMapOf<String, Any>(
+                        "jamKeluar" to System.currentTimeMillis() / 1000L,
+                        "didalamKompleks" to false
+                )
 
-                updatedData["jamKeluar"] = System.currentTimeMillis() / 1000L
-                updatedData["didalamKompleks"] = false;
-
-                currentItem.updateChildren(updatedData).addOnCompleteListener {
+                currentItem.update(updatedData).addOnSuccessListener {
                     Snackbar.make(detailDaftarTamu, getString(R.string.detail_tamu_success), Snackbar.LENGTH_LONG).show()
 
                     Timer().schedule(1000) {
