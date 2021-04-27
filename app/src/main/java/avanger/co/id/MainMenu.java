@@ -21,12 +21,14 @@ public class MainMenu extends AppCompatActivity {
         Button btnKembaliMenu = findViewById(R.id.KembaliMenu);
         Button btnFormBaru = findViewById(R.id.formbaru);
         Button btnDaftarTamu = findViewById(R.id.daftartamu);
+        Button btnTamuKeluar = findViewById(R.id.daftarTamuSelesai);
         Button btnPanduanPengguna = findViewById(R.id.panduanpengguna);
 
         btnKembaliMenu.setOnClickListener((v) -> finishAndRemoveTask());
         btnFormBaru.setOnClickListener((v) -> openFormBaru());
         btnDaftarTamu.setOnClickListener((v) -> openDaftarTamu());
         btnPanduanPengguna.setOnClickListener((v) -> openPanduanPengguna());
+        btnTamuKeluar.setOnClickListener((v) -> openDaftarTamuSelesai());
 
         // Manajemen permissions ada disini.
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
@@ -38,18 +40,23 @@ public class MainMenu extends AppCompatActivity {
         }
     }
 
-    public void openFormBaru() {
+    private void openFormBaru() {
         Intent intent = new Intent(MainMenu.this, FormBaru.class);
         startActivity(intent);
     }
 
-    public void openDaftarTamu() {
-        Intent intent = new Intent(MainMenu.this, DaftarTamu.class);
+    private void openDaftarTamu() {
+        Intent intent = new Intent(MainMenu.this, DaftarTamuMasuk.class);
         startActivity(intent);
     }
 
-    public void openPanduanPengguna() {
+    private void openPanduanPengguna() {
         Intent intent = new Intent(MainMenu.this, PanduanPengguna.class);
+        startActivity(intent);
+    }
+
+    private void openDaftarTamuSelesai() {
+        Intent intent = new Intent(MainMenu.this, DaftarTamuKeluar.class);
         startActivity(intent);
     }
 }

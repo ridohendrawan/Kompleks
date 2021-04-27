@@ -4,6 +4,10 @@ class Utilities {
     companion object {
         fun unixToTime(unixTime: Long?): String {
             unixTime?.let {
+                if (unixTime == 0L) {
+                    return "Tamu belum selesai berkunjung!"
+                }
+
                 val date = java.util.Date(unixTime * 1000L)
                 val dateFormat = java.text.SimpleDateFormat.getDateTimeInstance()
 
@@ -12,7 +16,7 @@ class Utilities {
                 return dateFormat.format(date)
             }
 
-            return ""
+            return "Waktu tidak ada!"
         }
     }
 }

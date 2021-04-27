@@ -10,6 +10,8 @@
     <string name="daftar_tamu_sample">Data</string>
     <string name="daftar_tamu_confirm">List tamu yang masih di dalam kompleks.</string>
     <string name="daftar_tamu_failed">Ada kesalahan internal dalam pengambilan data!</string>
+    <string name="daftar_tamu_keluar_title">Tamu Keluar</string>
+    <string name="daftar_tamu_keluar_confirm">List seluruh tamu dalam database.</string>
 
     <!-- Content (Main Menu) -->
     <string name="main_menu_btnOne">Tamu Daftar</string>
@@ -25,6 +27,9 @@
     <string name="detail_tamu_jamMasuk">Jam Masuk</string>
     <string name="detail_tamu_jamKeluar">Jam Keluar</string>
     <string name="detail_tamu_foto">Foto</string>
+    <string name="detail_tamu_status">Status</string>
+    <string name="detail_tamu_status_done">Tamu sudah selesai!</string>
+    <string name="detail_tamu_status_nope">Tamu belum selesai!</string>
     <string name="detail_tamu_fotoDesc">Gambar Foto KTP</string>
     <string name="detail_tamu_submit">Kunjungan Selesai!</string>
     <string name="detail_tamu_success">Data berhasil diupdate!</string>

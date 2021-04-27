@@ -12,16 +12,14 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_daftar_tamu.*
-import kotlinx.android.synthetic.main.item.*
+import kotlinx.android.synthetic.main.activity_daftar_tamu_masuk.*
 
-class DaftarTamu : AppCompatActivity() {
+class DaftarTamuMasuk : AppCompatActivity() {
     private lateinit var adapter: FirebaseRecyclerAdapter<Tamu, TamuHolder>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_daftar_tamu)
+        setContentView(R.layout.activity_daftar_tamu_masuk)
 
         // RecyclerView.
         tamuRecyclerView.layoutManager = LinearLayoutManager(this)
