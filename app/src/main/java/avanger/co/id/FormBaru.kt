@@ -16,7 +16,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.default
 import id.zelory.compressor.constraint.destination
@@ -33,14 +33,10 @@ class FormBaru : AppCompatActivity() {
     }
 
     private var imagePath: String = ""
-    private lateinit var storage: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_baru)
-
-        // Atur Firebase.
-        storage = FirebaseStorage.getInstance().getReference(getString(R.string.firebase_storage))
 
         // Delegasi listeners.
         btnKembali.setOnClickListener { finish() }
@@ -111,7 +107,11 @@ class FormBaru : AppCompatActivity() {
      * Fungsi untuk melakukan submission handling.
      */
     private fun handleSubmission() {
+        // Prepare database.
         val db = Firebase.firestore
+        val storage = Firebase.storage
+
+        // Parse input.
         val nama = namaTamu.text.toString()
         val tujuan = tujuanTamu.text.toString()
         val plat = platTamu.text.toString().toUpperCase(Locale.ROOT)
@@ -120,7 +120,7 @@ class FormBaru : AppCompatActivity() {
 
         if (nama.isNotBlank() && tujuan.isNotBlank() && plat.isNotBlank() && placeholderGambar.drawable !== null) {
             val gambarCloud = Uri.fromFile(File(imagePath))
-            val ref = storage.child(jamMasuk.toString())
+            val ref = storage.reference.child(getString(R.string.firebase_storage)).child(jamMasuk.toString())
 
             ref.putFile(gambarCloud).addOnProgressListener {
                 formProgress.visibility = View.VISIBLE
