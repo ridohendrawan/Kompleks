@@ -2,13 +2,10 @@ package avanger.co.id
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.database.DatabaseReference
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_tamu_keluar.*
 
 class DetailTamuKeluar : AppCompatActivity() {
-    private lateinit var database: DatabaseReference
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_tamu_keluar)
@@ -32,9 +29,6 @@ class DetailTamuKeluar : AppCompatActivity() {
 
             // Lazy-load image into the imageView.
             Picasso.get().load(tamu.photo).resize(1000, 800).into(fotoTamu)
-
-            // Setup Firebase.
-            database = FirebaseUtils.getFirebaseInstance().reference
         }
 
         // Delegate listeners.
