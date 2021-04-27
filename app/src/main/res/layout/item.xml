@@ -3,39 +3,31 @@
     android:id="@+id/dataHolder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center">
+    android:layout_margin="10dp"
+    android:background="@drawable/button4"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/namaTamu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:background="@drawable/button4"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_marginBottom="10dp"
+        android:text="@string/daftar_tamu_sample"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#0d6e6a"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/namaTamu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="@string/daftar_tamu_sample"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="#0d6e6a"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/platNomor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/daftar_tamu_sample"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="#0d6e6a"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
+    <TextView
+        android:id="@+id/platNomor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/daftar_tamu_sample"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#0d6e6a"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 </LinearLayout>
