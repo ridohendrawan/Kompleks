@@ -43,9 +43,6 @@
     <string name="internal_error">Ada kesalahan internal pada server saat upload gambar! Silakan coba lagi!</string>
     <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
 
-    <!-- Shared Preferences -->
-    <string name="preference_isLoggedIn">avanger.co.id.isLoggedIn</string>
-
     <!-- Authority -->
     <string name="authority">avanger.co.id.fileprovider</string>
 
