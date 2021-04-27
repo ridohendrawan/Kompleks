@@ -2,6 +2,9 @@
     <!-- Global -->
     <string name="app_name">Kompleks</string>
 
+    <!-- Content (Splash Screen) -->
+    <string name="splash_content_description">Splash screen dari aplikasi.</string>
+
     <!-- Content (Activity Main) -->
     <string name="main_hello">Hello!</string>
     <string name="main_welcome">Selamat datang di Kompleks!</string>
