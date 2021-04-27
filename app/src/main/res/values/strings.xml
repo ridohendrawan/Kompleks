@@ -5,6 +5,13 @@
     <!-- Content (Splash Screen) -->
     <string name="splash_content_description">Splash screen dari aplikasi.</string>
 
+    <!-- Content (Lupa Password) -->
+    <string name="lupapassword_username">Username: user</string>
+    <string name="lupapassword_password">Password: 123456</string>
+    <string name="lupapassword_image_content_description">Gambar animasi orang lupa.</string>
+    <string name="lupapassword_reminder">Sudah mengingat kembali?</string>
+    <string name="lupapassword_login">Coba Login Kembali</string>
+
     <!-- Content (Activity Main) -->
     <string name="main_hello">Hello!</string>
     <string name="main_welcome">Selamat datang di Kompleks!</string>
