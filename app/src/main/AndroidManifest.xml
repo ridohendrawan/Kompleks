@@ -12,8 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UAS_Avanger">
-        <activity android:name=".DetailTamuKeluar" />
-        <activity android:name=".DaftarTamuKeluar" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -25,20 +23,29 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <activity android:name=".DetailTamuKeluar" />
+        <activity android:name=".DaftarTamuKeluar" />
         <activity android:name=".FormBaru" />
         <activity android:name=".DetailTamuMasuk" />
         <activity android:name=".PanduanPengguna" />
         <activity android:name=".DaftarTamuMasuk" />
         <activity android:name=".MainMenu" />
-        <activity android:name=".LupaPassword" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreen">
+
+        <activity
+            android:name=".LupaPassword"
+            android:theme="@style/Theme.UAS_Avanger_White" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.UAS_Avanger_White" />
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/Theme.UAS_Avanger_White">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>
