@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UAS_Avanger">
-        <activity android:name=".DetailTamuKeluar"></activity>
+        <activity android:name=".DetailTamuKeluar" />
         <activity android:name=".DaftarTamuKeluar" />
 
         <provider
