@@ -3,7 +3,6 @@
     android:id="@+id/daftarTamu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0d6e6a"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 

@@ -2,8 +2,24 @@
     <!-- Global -->
     <string name="app_name">Kompleks</string>
 
+    <!-- Content (Splash Screen) -->
+    <string name="splash_content_description">Splash screen dari aplikasi.</string>
+
+    <!-- Content (Lupa Password) -->
+    <string name="lupapassword_username">Username: user</string>
+    <string name="lupapassword_password">Password: 123456</string>
+    <string name="lupapassword_image_content_description">Gambar animasi orang lupa.</string>
+    <string name="lupapassword_reminder">Sudah mengingat kembali?</string>
+    <string name="lupapassword_login">Coba Login Kembali</string>
+
     <!-- Content (Activity Main) -->
+    <string name="main_hello">Hello!</string>
+    <string name="main_welcome">Selamat datang di Kompleks!</string>
     <string name="main_fail_auth">Username atau password Anda salah!</string>
+    <string name="main_uname">Username</string>
+    <string name="main_password">Password</string>
+    <string name="main_login">Login</string>
+    <string name="main_forget">Lupa username / password?</string>
 
     <!-- Content (Daftar Tamu) -->
     <string name="daftar_tamu_title">Tamu Masuk</string>
@@ -21,6 +37,7 @@
 
     <!-- Content (Detail Tamu) -->
     <string name="detail_tamu_title">Detail Tamu Masuk</string>
+    <string name="detail_tamu_title_keluar">Detail Tamu</string>
     <string name="detail_tamu_name">Nama Tamu</string>
     <string name="detail_tamu_tujuan">Tujuan Kunjungan</string>
     <string name="detail_tamu_plat">Plat Nomor Kendaraan</string>
@@ -41,9 +58,6 @@
     <string name="required_fields">Mohon isi seluruh data!</string>
     <string name="internal_error">Ada kesalahan internal pada server saat upload gambar! Silakan coba lagi!</string>
     <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
-
-    <!-- Shared Preferences -->
-    <string name="preference_isLoggedIn">avanger.co.id.isLoggedIn</string>
 
     <!-- Authority -->
     <string name="authority">avanger.co.id.fileprovider</string>

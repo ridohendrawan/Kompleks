@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import avanger.co.id.databinding.ActivityDaftarTamuMasukBinding
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.material.snackbar.Snackbar
@@ -13,27 +14,28 @@ import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_daftar_tamu_masuk.*
 
 class DaftarTamuMasuk : AppCompatActivity() {
     private lateinit var adapter: FirestoreRecyclerAdapter<Tamu, TamuHolder>
+    private lateinit var binding: ActivityDaftarTamuMasukBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_daftar_tamu_masuk)
+        binding = ActivityDaftarTamuMasukBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Initialize adapter.
         adapter = tamuAdapter()
 
         // RecyclerView.
-        tamuRecyclerView.layoutManager = LinearLayoutManager(this)
-        tamuRecyclerView.adapter = adapter
+        binding.tamuRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.tamuRecyclerView.adapter = adapter
 
         // Snackbar.
-        Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_confirm), Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.daftarTamu, getString(R.string.daftar_tamu_confirm), Snackbar.LENGTH_LONG).show()
 
         // Delegasi listeners.
-        returnBtn.setOnClickListener { finish() }
+        binding.returnBtn.setOnClickListener { finish() }
     }
 
     override fun onStart() {
@@ -69,12 +71,12 @@ class DaftarTamuMasuk : AppCompatActivity() {
 
             override fun onDataChanged() {
                 super.onDataChanged()
-                progressBar.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
             }
 
             override fun onError(e: FirebaseFirestoreException) {
                 super.onError(e)
-                Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
+                Snackbar.make(binding.daftarTamu, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
             }
         }
     }

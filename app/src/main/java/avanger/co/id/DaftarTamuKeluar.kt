@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
+import avanger.co.id.databinding.ActivityDaftarTamuKeluarBinding
 import com.firebase.ui.firestore.paging.FirestorePagingAdapter
 import com.firebase.ui.firestore.paging.FirestorePagingOptions
 import com.firebase.ui.firestore.paging.LoadingState
@@ -14,28 +15,32 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_daftar_tamu_keluar.*
 import java.lang.Exception
 
 class DaftarTamuKeluar : AppCompatActivity() {
-     private lateinit var adapter: FirestorePagingAdapter<Tamu, TamuHolder>
+    private lateinit var adapter: FirestorePagingAdapter<Tamu, TamuHolder>
+    private lateinit var binding: ActivityDaftarTamuKeluarBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_daftar_tamu_keluar)
+
+        // Binding.
+        binding = ActivityDaftarTamuKeluarBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         // Initialize adapter.
         adapter = tamuAdapter()
 
         // RecyclerView.
-        tamuRecyclerView.layoutManager = LinearLayoutManager(this)
-        tamuRecyclerView.adapter = adapter
+        binding.tamuRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.tamuRecyclerView.adapter = adapter
 
         // Snackbar.
-        Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_keluar_confirm), Snackbar.LENGTH_LONG).show()
+        Snackbar.make(binding.daftarTamu, getString(R.string.daftar_tamu_keluar_confirm), Snackbar.LENGTH_LONG).show()
 
         // Delegasi listeners.
-        returnBtn.setOnClickListener { finish() }
+        binding.returnBtn.setOnClickListener { finish() }
     }
 
     override fun onStart() {
@@ -77,18 +82,18 @@ class DaftarTamuKeluar : AppCompatActivity() {
 
             override fun onError(e: Exception) {
                 super.onError(e)
-                Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
+                Snackbar.make(binding.daftarTamu, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
             }
 
             override fun onLoadingStateChanged(state: LoadingState) {
                 super.onLoadingStateChanged(state)
 
                 when (state) {
-                    LoadingState.LOADING_INITIAL -> progressBar.visibility = View.VISIBLE
-                    LoadingState.LOADING_MORE -> progressBar.visibility = View.VISIBLE
-                    LoadingState.FINISHED -> progressBar.visibility = View.GONE
-                    LoadingState.LOADED -> progressBar.visibility = View.GONE
-                    LoadingState.ERROR -> Snackbar.make(daftarTamu, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
+                    LoadingState.LOADING_INITIAL -> binding.progressBar.visibility = View.VISIBLE
+                    LoadingState.LOADING_MORE -> binding.progressBar.visibility = View.VISIBLE
+                    LoadingState.FINISHED -> binding.progressBar.visibility = View.GONE
+                    LoadingState.LOADED -> binding.progressBar.visibility = View.GONE
+                    LoadingState.ERROR -> Snackbar.make(binding.progressBar, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
                 }
             }
         }
