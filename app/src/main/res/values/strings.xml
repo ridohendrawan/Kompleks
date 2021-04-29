@@ -59,6 +59,10 @@
     <string name="internal_error">Ada kesalahan internal pada server saat upload gambar! Silakan coba lagi!</string>
     <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
 
+    <!-- Content (PanduanPengguna) -->
+    <string name="judul_panduan">PANDUAN PENGGUNA</string>
+
+
     <!-- Authority -->
     <string name="authority">avanger.co.id.fileprovider</string>
 
