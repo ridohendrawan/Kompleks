@@ -23,22 +23,48 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".DetailTamuKeluar" />
-        <activity android:name=".DaftarTamuKeluar" />
-        <activity android:name=".FormBaru" />
-        <activity android:name=".DetailTamuMasuk" />
-        <activity android:name=".PanduanPengguna" />
-        <activity android:name=".DaftarTamuMasuk" />
-        <activity android:name=".MainMenu" />
-
+        <activity
+            android:name=".DetailTamuKeluar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DaftarTamuKeluar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FormBaru"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DetailTamuMasuk"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PanduanPengguna"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DaftarTamuMasuk"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainMenu"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LupaPassword"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.UAS_Avanger_White" />
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.UAS_Avanger_White" />
         <activity
             android:name=".SplashScreen"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.UAS_Avanger_White">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
