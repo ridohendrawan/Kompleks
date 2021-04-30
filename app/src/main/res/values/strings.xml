@@ -60,8 +60,8 @@
     <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
 
     <!-- Content (PanduanPengguna) -->
-    <string name="judul_panduan">PANDUAN PENGGUNA</string>
-
+    <string name="judul_panduan">Panduan Pengguna</string>
+    <string name="desc_panduan">Gambar panduan pengguna</string>
 
     <!-- Authority -->
     <string name="authority">avanger.co.id.fileprovider</string>
