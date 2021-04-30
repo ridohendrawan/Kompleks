@@ -30,10 +30,11 @@
     <string name="daftar_tamu_keluar_confirm">List seluruh tamu dalam database.</string>
 
     <!-- Content (Main Menu) -->
-    <string name="main_menu_btnOne">Tamu Daftar</string>
+    <string name="main_menu_btnOne">Tamu Baru</string>
     <string name="main_menu_btnTwo">Tamu Masuk</string>
     <string name="main_menu_btnThree">Tamu Keluar</string>
     <string name="main_menu_btnFour">Panduan Penggunaan</string>
+    <string name="main_menu_desc">Logo Aplikasi</string>
 
     <!-- Content (Detail Tamu) -->
     <string name="detail_tamu_title">Detail Tamu Masuk</string>

@@ -20,12 +20,12 @@
         android:layout_marginTop="15dp"
         android:letterSpacing="0.03"
         android:text="@string/judul_panduan"
+        android:textAllCaps="true"
         android:textColor="#ffff"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textAllCaps="true"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/KembaliMenu" />
 
     <View
@@ -35,18 +35,18 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/darker_gray"
         android:backgroundTint="#ffff"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/panduanpengguna" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:contentDescription="@string/desc_panduan"
         android:src="@drawable/panduan"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/garispanduanpengguna"
-        android:contentDescription="@string/desc_panduan"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/garispanduanpengguna" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
