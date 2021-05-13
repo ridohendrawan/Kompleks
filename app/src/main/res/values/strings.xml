@@ -53,6 +53,13 @@
     <string name="detail_tamu_success">Data berhasil diupdate!</string>
     <string name="detail_tamu_failed">Ada kesalahan internal! Silakan coba lagi!</string>
 
+    <string name="placeholder_plat">B 1020 SSS</string>
+    <string name="placeholder_ikon_kamera">Gambar ikon kamera</string>
+    <string name="placeholder_gambar">placeholder untuk gambar</string>
+
+    <string name="button_uploadGambar">Upload Foto</string>
+    <string name="button_submit">Submit</string>
+
     <!-- Content (FormBaru) -->
     <string name="form_baru_title">Tambah Tamu</string>
     <string name="success_upload">Data berhasil ditambahkan!</string>

@@ -1,53 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/formBaru"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#0d6e6a"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+
 
         <Button
             android:id="@+id/btnKembali"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="start"
+            android:background="@drawable/arrow_left"
+            android:layout_marginEnd="50dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/arrow_left" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textTambahTamu"
+            />
 
         <TextView
+            android:id="@+id/textTambahTamu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:letterSpacing="0.03"
             android:text="@string/form_baru_title"
             android:textAllCaps="true"
             android:textColor="#ffff"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnKembali"/>
 
         <View
+            android:id="@+id/formBaruDivider"
             android:layout_width="100dp"
             android:layout_height="2dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray"
-            android:backgroundTint="#ffff" />
+            android:backgroundTint="#ffff"
+            app:layout_constraintTop_toBottomOf="@id/textTambahTamu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
+            android:id="@+id/textNamaTamu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
             android:letterSpacing="0.03"
-            android:text="Nama Tamu"
+            android:text="@string/detail_tamu_name"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@id/formBaruDivider"
+            app:layout_constraintStart_toStartOf="@id/namaTamu"/>
 
         <EditText
             android:id="@+id/namaTamu"
@@ -55,23 +67,32 @@
             android:layout_height="45dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/forget2"
-            android:hint="Nama Tamu"
+            android:hint="@string/detail_tamu_name"
+            android:autofillHints="Nama Tamu"
             android:inputType="textPersonName"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/textNamaTamu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
+            android:id="@+id/textTujuanTamu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.03"
-            android:text="Tujuan Kunjugan"
+            android:text="@string/detail_tamu_tujuan"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="@id/tujuanTamu"
+            app:layout_constraintTop_toBottomOf="@id/namaTamu"
+
+            />
 
         <EditText
             android:id="@+id/tujuanTamu"
@@ -79,23 +100,31 @@
             android:layout_height="45dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/forget2"
-            android:hint="Tujuan Kunjugan"
+            android:hint="@string/detail_tamu_tujuan"
+            android:autofillHints="Tujuan Tamu"
             android:inputType="textPersonName"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textTujuanTamu"/>
 
         <TextView
+            android:id="@+id/textPlatTamu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="70dp"
             android:layout_marginTop="8dp"
             android:letterSpacing="0.03"
-            android:text="Plat Nomor Kendaraan"
+            android:text="@string/detail_tamu_plat"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tujuanTamu"
+            app:layout_constraintStart_toStartOf="@id/platTamu"
+            />
 
         <EditText
             android:id="@+id/platTamu"
@@ -103,36 +132,47 @@
             android:layout_height="45dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/forget2"
-            android:hint="B 1020 SSS"
+            android:hint="@string/placeholder_plat"
+            android:autofillHints="@string/placeholder_plat"
             android:inputType="textPersonName"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:textColor="#0d6e6a"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPlatTamu"
+            />
 
         <LinearLayout
+            android:id="@+id/uploadFoto"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/platTamu">
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/camera" />
+                android:background="@drawable/camera"
+                android:contentDescription="@string/placeholder_ikon_kamera"/>
 
             <Button
                 android:id="@+id/btnFoto"
                 android:layout_width="180dp"
                 android:layout_height="45dp"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:layout_marginTop="-55dp"
                 android:background="@drawable/button_putih"
-                android:text="Upload Foto"
+                android:text="@string/button_uploadGambar"
                 android:textColor="#0d6e6a"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -141,16 +181,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="15dp"
-                android:scaleType="center" />
+                android:scaleType="center"
+                android:contentDescription="@string/placeholder_gambar"/>
         </LinearLayout>
 
         <View
+            android:id="@+id/dividerUploadFoto"
             android:layout_width="300dp"
             android:layout_height="2dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray"
-            android:backgroundTint="#ffff" />
+            android:backgroundTint="#ffff"
+            app:layout_constraintTop_toBottomOf="@id/uploadFoto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
         <ProgressBar
             android:id="@+id/formProgress"
@@ -159,18 +205,24 @@
             android:indeterminate="true"
             android:indeterminateTint="#fff"
             android:indeterminateTintMode="src_atop"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/dividerUploadFoto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button3"
-            android:text="Submit"
+            android:text="@string/button_submit"
             android:textColor="#FFF"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividerUploadFoto"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

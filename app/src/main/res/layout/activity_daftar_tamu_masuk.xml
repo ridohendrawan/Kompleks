@@ -10,8 +10,8 @@
         android:id="@+id/returnBtn"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="20dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/arrow_left" />
 
