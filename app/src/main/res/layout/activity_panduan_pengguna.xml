@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/KembaliMenu"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/arrow_left"
+        app:layout_constraintEnd_toStartOf="@id/panduanpengguna"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/panduanpengguna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:letterSpacing="0.03"
+        android:text="@string/judul_panduan"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/KembaliMenu" />
+
+    <View
+        android:id="@+id/garispanduanpengguna"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        android:backgroundTint="#ffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/panduanpengguna" />
+
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:contentDescription="@string/desc_panduan"
+        android:src="@drawable/panduan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/garispanduanpengguna" />
 
-        <Button
-            android:id="@+id/KembaliMenu"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/arrow_left" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:letterSpacing="0.03"
-            android:text="PANDUAN PENGGUNA"
-            android:textColor="#ffff"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="0dp"
-            android:background="@android:color/darker_gray"
-            android:backgroundTint="#ffff" />
-
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/panduan" />
-
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

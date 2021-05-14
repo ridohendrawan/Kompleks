@@ -30,14 +30,15 @@
     <string name="daftar_tamu_keluar_confirm">List seluruh tamu dalam database.</string>
 
     <!-- Content (Main Menu) -->
-    <string name="main_menu_btnOne">Tamu Daftar</string>
+    <string name="main_menu_btnOne">Tamu Baru</string>
     <string name="main_menu_btnTwo">Tamu Masuk</string>
     <string name="main_menu_btnThree">Tamu Keluar</string>
     <string name="main_menu_btnFour">Panduan Penggunaan</string>
+    <string name="main_menu_desc">Logo Aplikasi</string>
 
     <!-- Content (Detail Tamu) -->
     <string name="detail_tamu_title">Detail Tamu Masuk</string>
-    <string name="detail_tamu_title_keluar">Detail Tamu</string>
+    <string name="detail_tamu_title_keluar">Detail Tamu Keluar</string>
     <string name="detail_tamu_name">Nama Tamu</string>
     <string name="detail_tamu_tujuan">Tujuan Kunjungan</string>
     <string name="detail_tamu_plat">Plat Nomor Kendaraan</string>
@@ -52,12 +53,23 @@
     <string name="detail_tamu_success">Data berhasil diupdate!</string>
     <string name="detail_tamu_failed">Ada kesalahan internal! Silakan coba lagi!</string>
 
+    <string name="placeholder_plat">B 1020 SSS</string>
+    <string name="placeholder_ikon_kamera">Gambar ikon kamera</string>
+    <string name="placeholder_gambar">placeholder untuk gambar</string>
+
+    <string name="button_uploadGambar">Upload Foto</string>
+    <string name="button_submit">Submit</string>
+
     <!-- Content (FormBaru) -->
     <string name="form_baru_title">Tambah Tamu</string>
     <string name="success_upload">Data berhasil ditambahkan!</string>
     <string name="required_fields">Mohon isi seluruh data!</string>
     <string name="internal_error">Ada kesalahan internal pada server saat upload gambar! Silakan coba lagi!</string>
     <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
+
+    <!-- Content (PanduanPengguna) -->
+    <string name="judul_panduan">Panduan Pengguna</string>
+    <string name="desc_panduan">Gambar panduan pengguna</string>
 
     <!-- Authority -->
     <string name="authority">avanger.co.id.fileprovider</string>
