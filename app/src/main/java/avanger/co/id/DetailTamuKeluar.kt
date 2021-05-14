@@ -24,11 +24,11 @@ class DetailTamuKeluar : AppCompatActivity() {
             binding.detailTamuJamMasuk.text = Utilities.unixToTime(tamu.jamMasuk)
             binding.detailTamuJamKeluar.text = Utilities.unixToTime(tamu.jamKeluar)
 
-            if (tamu.didalamKompleks == true) {
-                binding.detailStatusTamu.text = getString(R.string.detail_tamu_status_nope)
-            } else {
-                binding.detailStatusTamu.text = getString(R.string.detail_tamu_status_done)
-            }
+//            if (tamu.didalamKompleks == true) {
+//                binding.detailStatusTamu.text = getString(R.string.detail_tamu_status_nope)
+//            } else {
+//                binding.detailStatusTamu.text = getString(R.string.detail_tamu_status_done)
+//            }
 
             // Lazy-load image into the imageView.
             Picasso.get().load(tamu.photo).resize(1000, 800).into(binding.fotoTamu)
