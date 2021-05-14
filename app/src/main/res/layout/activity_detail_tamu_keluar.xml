@@ -7,19 +7,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
 
         <Button
             android:id="@+id/btnKembali"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginEnd="60dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/arrow_left"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/detailTamuKeluar"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/detailTamuKeluar"
@@ -32,9 +30,9 @@
             android:textColor="#ffff"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/btnKembali"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/btnKembali" />
 
         <View
             android:id="@+id/tamuKeluarDivider"
@@ -44,9 +42,9 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray"
             android:backgroundTint="#ffff"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuKeluar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/detailTamuKeluar" />
 
         <TextView
             android:id="@+id/textDetailTamuName"
@@ -54,12 +52,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:letterSpacing="0.03"
             android:text="@string/detail_tamu_name"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/tamuKeluarDivider"
-            app:layout_constraintStart_toStartOf="@id/detailTamuName"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuName"
+            app:layout_constraintTop_toBottomOf="@id/tamuKeluarDivider" />
 
         <TextView
             android:id="@+id/detailTamuName"
@@ -73,9 +72,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuName"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuName" />
 
         <TextView
             android:id="@+id/textDetailTamuTujuan"
@@ -88,8 +87,8 @@
             android:text="@string/detail_tamu_tujuan"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuName"
-            app:layout_constraintStart_toStartOf="@id/detailTamuTujuan"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuTujuan"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuName" />
 
         <TextView
             android:id="@+id/detailTamuTujuan"
@@ -103,9 +102,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuTujuan"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuTujuan" />
 
         <TextView
             android:id="@+id/textDetailTamuPlat"
@@ -118,8 +117,8 @@
             android:text="@string/detail_tamu_plat"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuTujuan"
-            app:layout_constraintStart_toStartOf="@id/detailTamuPlat"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuPlat"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuTujuan" />
 
         <TextView
             android:id="@+id/detailTamuPlat"
@@ -133,9 +132,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuPlat"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuPlat" />
 
         <TextView
             android:id="@+id/textDetailTamuJamMasuk"
@@ -148,8 +147,8 @@
             android:text="@string/detail_tamu_jamMasuk"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuPlat"
-            app:layout_constraintStart_toStartOf="@id/detailTamuJamMasuk"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuJamMasuk"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuPlat" />
 
         <TextView
             android:id="@+id/detailTamuJamMasuk"
@@ -163,9 +162,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuJamMasuk"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuJamMasuk" />
 
         <TextView
             android:id="@+id/textDetailTamuJamKeluar"
@@ -178,8 +177,8 @@
             android:text="@string/detail_tamu_jamKeluar"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuJamMasuk"
-            app:layout_constraintStart_toStartOf="@id/detailTamuJamKeluar"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuJamKeluar"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuJamMasuk" />
 
         <TextView
             android:id="@+id/detailTamuJamKeluar"
@@ -193,39 +192,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuJamKeluar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <TextView
-            android:id="@+id/textDetailStatusTamu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:letterSpacing="0.03"
-            android:text="@string/detail_tamu_status"
-            android:textColor="#ffff"
-            android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuJamKeluar"
-            app:layout_constraintStart_toStartOf="@id/detailStatusTamu"/>
-
-        <TextView
-            android:id="@+id/detailStatusTamu"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/forget2"
-            android:hint="@string/detail_tamu_status"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColor="#0d6e6a"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailStatusTamu"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuJamKeluar" />
 
         <TextView
             android:id="@+id/textFotoTamuKeluar"
@@ -238,8 +207,8 @@
             android:text="@string/detail_tamu_foto"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailStatusTamu"
-            app:layout_constraintStart_toStartOf="@id/fotoTamuKeluar"/>
+            app:layout_constraintStart_toStartOf="@id/fotoTamuKeluar"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuJamKeluar" />
 
         <LinearLayout
             android:id="@+id/fotoTamuKeluar"
@@ -247,9 +216,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/textFotoTamuKeluar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/textFotoTamuKeluar">
 
             <ImageView
                 android:id="@+id/fotoTamu"
@@ -268,8 +237,8 @@
             android:layout_marginBottom="0dp"
             android:background="@android:color/darker_gray"
             android:backgroundTint="#ffff"
-            app:layout_constraintTop_toBottomOf="@id/fotoTamuKeluar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/fotoTamuKeluar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

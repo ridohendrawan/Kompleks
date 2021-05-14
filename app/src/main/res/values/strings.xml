@@ -38,7 +38,7 @@
 
     <!-- Content (Detail Tamu) -->
     <string name="detail_tamu_title">Detail Tamu Masuk</string>
-    <string name="detail_tamu_title_keluar">Detail Tamu</string>
+    <string name="detail_tamu_title_keluar">Detail Tamu Keluar</string>
     <string name="detail_tamu_name">Nama Tamu</string>
     <string name="detail_tamu_tujuan">Tujuan Kunjungan</string>
     <string name="detail_tamu_plat">Plat Nomor Kendaraan</string>
