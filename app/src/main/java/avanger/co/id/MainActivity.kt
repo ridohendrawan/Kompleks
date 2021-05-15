@@ -30,19 +30,23 @@ class MainActivity : AppCompatActivity() {
             val usernameSuffix = getString(R.string.firebase_email)
             val firebaseUsername = "$username@$usernameSuffix"
 
-            // Tampilkan progress bar.
-            binding.formProgress.visibility = View.VISIBLE
+            if (username.isNotBlank() && password.isNotBlank()) {
+                // Tampilkan progress bar.
+                binding.formProgress.visibility = View.VISIBLE
 
-            // Ketika seorang user berhasil login, tidak perlu apa-apa lagi karena sudah berada di Firebase.
-            // Segi security, sangat aman - Firebase does all of the abstractions.
-            auth.signInWithEmailAndPassword(firebaseUsername, password).addOnCompleteListener { task ->
-                binding.formProgress.visibility = View.GONE
+                // Ketika seorang user berhasil login, tidak perlu apa-apa lagi karena sudah berada di Firebase.
+                // Segi security, sangat aman - Firebase does all of the abstractions.
+                auth.signInWithEmailAndPassword(firebaseUsername, password).addOnCompleteListener { task ->
+                    binding.formProgress.visibility = View.GONE
 
-                if (task.isSuccessful) {
-                    openMainMenu()
-                } else {
-                    Snackbar.make(binding.activityMainView, getString(R.string.main_fail_auth), Snackbar.LENGTH_LONG).show()
+                    if (task.isSuccessful) {
+                        openMainMenu()
+                    } else {
+                        Snackbar.make(binding.activityMainView, getString(R.string.main_fail_auth), Snackbar.LENGTH_LONG).show()
+                    }
                 }
+            } else {
+                Snackbar.make(binding.activityMainView, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
             }
         }
     }
