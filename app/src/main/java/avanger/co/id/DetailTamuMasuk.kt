@@ -1,12 +1,15 @@
 package avanger.co.id
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import avanger.co.id.databinding.ActivityDetailTamuMasukBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import java.lang.Exception
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -29,7 +32,18 @@ class DetailTamuMasuk : AppCompatActivity() {
             binding.detailTamuJamMasuk.text = Utilities.unixToTime(tamu.jamMasuk)
 
             // Lazy-load image into the imageView.
-            Picasso.get().load(tamu.photo).resize(1000, 800).into(binding.fotoTamu)
+            Picasso.get()
+                    .load(tamu.photo)
+                    .resize(1000, 800)
+                    .into(binding.fotoTamu, object : Callback {
+                        override fun onError(e: Exception?) {
+                            binding.fotoTamuErrorText.visibility = View.VISIBLE
+                        }
+
+                        override fun onSuccess() {
+                            binding.fotoTamu.visibility = View.VISIBLE
+                        }
+                    })
         }
 
         // Delegate listeners.

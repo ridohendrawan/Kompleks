@@ -53,6 +53,7 @@
     <string name="detail_tamu_submit">Kunjungan Selesai!</string>
     <string name="detail_tamu_success">Data berhasil diupdate!</string>
     <string name="detail_tamu_failed">Ada kesalahan internal! Silakan coba lagi!</string>
+    <string name="detail_tamu_noimage_or_fail">Tidak ada foto atau ada kesalahan internal! Silakan coba lagi!</string>
 
     <string name="placeholder_plat">B 1020 SSS</string>
     <string name="placeholder_ikon_kamera">Gambar ikon kamera</string>

@@ -220,13 +220,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textFotoTamuKeluar">
 
+            <TextView
+                android:id="@+id/fotoTamuErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/detail_tamu_noimage_or_fail"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
             <ImageView
                 android:id="@+id/fotoTamu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="10dp"
                 android:contentDescription="@string/detail_tamu_fotoDesc"
-                android:scaleType="center" />
+                android:scaleType="center"
+                android:visibility="gone" />
         </LinearLayout>
 
         <View

@@ -14,11 +14,11 @@
             android:id="@+id/btnKembali"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginEnd="5dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
             android:background="@drawable/arrow_left"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/textDetailTamu"/>
+            app:layout_constraintEnd_toStartOf="@id/textDetailTamu"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textDetailTamu"
@@ -31,9 +31,9 @@
             android:textColor="#ffff"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnKembali"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnKembali" />
 
         <View
             android:id="@+id/detailTamuDivider"
@@ -43,9 +43,9 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray"
             android:backgroundTint="#ffff"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamu"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamu" />
 
         <TextView
             android:id="@+id/textDetailTamuMasuk"
@@ -57,8 +57,8 @@
             android:text="@string/detail_tamu_name"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuDivider"
-            app:layout_constraintStart_toStartOf="@id/detailTamuName"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuName"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuDivider" />
 
         <TextView
             android:id="@+id/detailTamuName"
@@ -72,9 +72,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuMasuk"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuMasuk" />
 
         <TextView
             android:id="@+id/textDetailTamuTujuan"
@@ -87,8 +87,8 @@
             android:text="@string/detail_tamu_tujuan"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuName"
-            app:layout_constraintStart_toStartOf="@id/detailTamuTujuan"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuTujuan"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuName" />
 
         <TextView
             android:id="@+id/detailTamuTujuan"
@@ -102,9 +102,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuTujuan"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuTujuan" />
 
         <TextView
             android:id="@+id/textDetailTamuPlat"
@@ -117,8 +117,8 @@
             android:text="@string/detail_tamu_plat"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuTujuan"
-            app:layout_constraintStart_toStartOf="@id/detailTamuPlat"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuPlat"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuTujuan" />
 
         <TextView
             android:id="@+id/detailTamuPlat"
@@ -132,9 +132,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuPlat"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuPlat" />
 
         <TextView
             android:id="@+id/textDetailTamuJamMasuk"
@@ -147,9 +147,8 @@
             android:text="@string/detail_tamu_jamMasuk"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuPlat"
             app:layout_constraintStart_toStartOf="@id/detailTamuJamMasuk"
-            />
+            app:layout_constraintTop_toBottomOf="@id/detailTamuPlat" />
 
         <TextView
             android:id="@+id/detailTamuJamMasuk"
@@ -163,9 +162,9 @@
             android:textColor="#0d6e6a"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/textDetailTamuJamMasuk"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textDetailTamuJamMasuk" />
 
         <TextView
             android:id="@+id/textFoto"
@@ -178,8 +177,8 @@
             android:text="@string/detail_tamu_foto"
             android:textColor="#ffff"
             android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/detailTamuJamMasuk"
-            app:layout_constraintStart_toStartOf="@id/detailTamuJamMasuk"/>
+            app:layout_constraintStart_toStartOf="@id/detailTamuJamMasuk"
+            app:layout_constraintTop_toBottomOf="@id/detailTamuJamMasuk" />
 
         <LinearLayout
             android:id="@+id/gambarDetailTamu"
@@ -187,17 +186,28 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/textFoto"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/textFoto">
+
+            <TextView
+                android:id="@+id/fotoTamuErrorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/detail_tamu_noimage_or_fail"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/fotoTamu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="10dp"
                 android:contentDescription="@string/detail_tamu_fotoDesc"
-                android:scaleType="center" />
+                android:scaleType="center"
+                android:visibility="gone" />
         </LinearLayout>
 
         <View
@@ -208,41 +218,9 @@
             android:layout_marginBottom="0dp"
             android:background="@android:color/darker_gray"
             android:backgroundTint="#ffff"
-            app:layout_constraintTop_toBottomOf="@id/gambarDetailTamu"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
-
-        <!--    Button update delete-->
-        <!--    <LinearLayout-->
-        <!--        android:layout_width="300dp"-->
-        <!--        android:layout_height="100dp"-->
-        <!--        android:layout_gravity="center_horizontal"-->
-        <!--        android:orientation="vertical"-->
-        <!--        android:layout_marginTop="-40dp">-->
-
-        <!--        <Button-->
-        <!--            android:layout_width="120dp"-->
-        <!--            android:layout_height="45dp"-->
-        <!--            android:layout_gravity="left"-->
-        <!--            android:layout_marginTop="55dp"-->
-        <!--            android:background="@drawable/button_merah"-->
-        <!--            android:text="DELETE"-->
-        <!--            android:textColor="#ffff"-->
-        <!--            android:textSize="18dp"-->
-        <!--            android:textStyle="bold" />-->
-        <!--        <Button-->
-        <!--            android:layout_width="120dp"-->
-        <!--            android:layout_height="45dp"-->
-        <!--            android:layout_gravity="right"-->
-        <!--            android:layout_marginTop="-45dp"-->
-        <!--            android:background="@drawable/button_hijau"-->
-        <!--            android:text="UPDATE"-->
-        <!--            android:textColor="#fff"-->
-        <!--            android:textSize="18dp"-->
-        <!--            android:textStyle="bold" />-->
-
-        <!--    </LinearLayout>-->
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gambarDetailTamu" />
 
         <Button
             android:id="@+id/btnSubmit"
@@ -255,9 +233,9 @@
             android:textColor="#FFF"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/dividerFoto"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/dividerFoto" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -1,9 +1,12 @@
 package avanger.co.id
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import avanger.co.id.databinding.ActivityDetailTamuKeluarBinding
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import java.lang.Exception
 
 class DetailTamuKeluar : AppCompatActivity() {
     private lateinit var binding: ActivityDetailTamuKeluarBinding
@@ -24,14 +27,19 @@ class DetailTamuKeluar : AppCompatActivity() {
             binding.detailTamuJamMasuk.text = Utilities.unixToTime(tamu.jamMasuk)
             binding.detailTamuJamKeluar.text = Utilities.unixToTime(tamu.jamKeluar)
 
-//            if (tamu.didalamKompleks == true) {
-//                binding.detailStatusTamu.text = getString(R.string.detail_tamu_status_nope)
-//            } else {
-//                binding.detailStatusTamu.text = getString(R.string.detail_tamu_status_done)
-//            }
-
             // Lazy-load image into the imageView.
-            Picasso.get().load(tamu.photo).resize(1000, 800).into(binding.fotoTamu)
+            Picasso.get()
+                    .load(tamu.photo)
+                    .resize(1000, 800)
+                    .into(binding.fotoTamu, object : Callback {
+                        override fun onError(e: Exception?) {
+                            binding.fotoTamuErrorText.visibility = View.VISIBLE
+                        }
+
+                        override fun onSuccess() {
+                            binding.fotoTamu.visibility = View.VISIBLE
+                        }
+                    })
         }
 
         // Delegate listeners.
