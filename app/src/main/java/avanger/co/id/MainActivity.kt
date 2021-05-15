@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         Snackbar.make(binding.activityMainView, getString(R.string.main_fail_auth), Snackbar.LENGTH_LONG).show()
                     }
+                }.addOnFailureListener {
+                    Snackbar.make(binding.activityMainView, getString(R.string.main_fail), Snackbar.LENGTH_LONG).show()
                 }
             } else {
                 Snackbar.make(binding.activityMainView, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()

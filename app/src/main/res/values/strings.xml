@@ -20,6 +20,7 @@
     <string name="main_password">Password</string>
     <string name="main_login">Login</string>
     <string name="main_forget">Lupa username / password?</string>
+    <string name="main_fail">Ada kesalahan dalam autentikasi!</string>
 
     <!-- Content (Daftar Tamu) -->
     <string name="daftar_tamu_title">Tamu Masuk</string>
