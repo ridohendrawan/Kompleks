@@ -1,5 +1,7 @@
 package avanger.co.id
 
+import java.util.*
+
 class Utilities {
     companion object {
         fun unixToTime(unixTime: Long?): String {
@@ -17,6 +19,10 @@ class Utilities {
             }
 
             return "Waktu tidak ada!"
+        }
+
+        fun getCurrentDay(): Int {
+            return Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
         }
     }
 }
