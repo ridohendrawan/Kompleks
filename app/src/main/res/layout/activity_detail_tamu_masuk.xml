@@ -14,10 +14,9 @@
             android:id="@+id/btnKembali"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="5dp"
+            android:layout_margin="20dp"
             android:background="@drawable/arrow_left"
-            app:layout_constraintEnd_toStartOf="@id/textDetailTamu"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -222,6 +221,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gambarDetailTamu" />
 
+        <ProgressBar
+            android:id="@+id/formProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#fff"
+            android:indeterminateTintMode="src_atop"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividerFoto" />
+
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="300dp"
@@ -235,7 +247,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dividerFoto" />
+            app:layout_constraintTop_toBottomOf="@id/formProgress" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -50,6 +50,8 @@ class DetailTamuMasuk : AppCompatActivity() {
         binding.btnKembali.setOnClickListener { finish() }
         binding.btnSubmit.setOnClickListener {
             tamu?.idTamu?.let { id ->
+                binding.formProgress.visibility = View.VISIBLE
+
                 val database = Firebase.firestore
                 val currentItem = database.collection(getString(R.string.firebase_document)).document(id)
                 val updatedData = hashMapOf<String, Any>(
@@ -58,12 +60,14 @@ class DetailTamuMasuk : AppCompatActivity() {
                 )
 
                 currentItem.update(updatedData).addOnSuccessListener {
+                    binding.formProgress.visibility = View.GONE
                     Snackbar.make(binding.detailDaftarTamu, getString(R.string.detail_tamu_success), Snackbar.LENGTH_LONG).show()
 
                     Timer().schedule(1000) {
                         finish()
                     }
                 }.addOnFailureListener {
+                    binding.formProgress.visibility = View.GONE
                     Snackbar.make(binding.detailDaftarTamu, getString(R.string.detail_tamu_failed), Snackbar.LENGTH_LONG).show()
                 }
             }
