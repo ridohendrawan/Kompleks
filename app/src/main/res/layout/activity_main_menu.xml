@@ -15,8 +15,7 @@
             android:id="@+id/KembaliMenu"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
             android:background="@drawable/arrow_left"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
