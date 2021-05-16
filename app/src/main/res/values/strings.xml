@@ -8,7 +8,6 @@
     <!-- Content (Lupa Password) -->
     <string name="lupapassword_username">Username: user</string>
     <string name="lupapassword_password">Password: 123456</string>
-    <string name="lupapassword_image_content_description">Gambar animasi orang lupa.</string>
     <string name="lupapassword_reminder">Sudah mengingat kembali?</string>
     <string name="lupapassword_login">Coba Login Kembali</string>
 
@@ -34,7 +33,6 @@
     <string name="main_menu_btnOne">Tamu Baru</string>
     <string name="main_menu_btnTwo">Tamu Masuk</string>
     <string name="main_menu_btnThree">Tamu Keluar</string>
-    <string name="main_menu_btnFour">Panduan Penggunaan</string>
     <string name="main_menu_desc">Logo Aplikasi</string>
 
     <!-- Content (Detail Tamu) -->
@@ -46,9 +44,6 @@
     <string name="detail_tamu_jamMasuk">Jam Masuk</string>
     <string name="detail_tamu_jamKeluar">Jam Keluar</string>
     <string name="detail_tamu_foto">Foto</string>
-    <string name="detail_tamu_status">Status</string>
-    <string name="detail_tamu_status_done">Tamu sudah selesai!</string>
-    <string name="detail_tamu_status_nope">Tamu belum selesai!</string>
     <string name="detail_tamu_fotoDesc">Gambar Foto KTP</string>
     <string name="detail_tamu_submit">Kunjungan Selesai!</string>
     <string name="detail_tamu_success">Data berhasil diupdate!</string>
@@ -68,10 +63,6 @@
     <string name="required_fields">Mohon isi seluruh data!</string>
     <string name="internal_error">Ada kesalahan internal pada server saat upload gambar! Silakan coba lagi!</string>
     <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
-
-    <!-- Content (PanduanPengguna) -->
-    <string name="judul_panduan">Panduan Pengguna</string>
-    <string name="desc_panduan">Gambar panduan pengguna</string>
 
     <!-- Authority -->
     <string name="authority">avanger.co.id.fileprovider</string>
