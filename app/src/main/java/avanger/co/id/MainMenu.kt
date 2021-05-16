@@ -26,7 +26,6 @@ class MainMenu : AppCompatActivity() {
         binding.formbaru.setOnClickListener { openFormBaru() }
         binding.daftartamu.setOnClickListener { openDaftarTamu() }
         binding.daftarTamuSelesai.setOnClickListener { openDaftarTamuSelesai() }
-        binding.panduanpengguna.setOnClickListener { openPanduanPengguna() }
 
         // Run workers for data deletion.
         val workRequest = OneTimeWorkRequestBuilder<DeleteTask>().build()
@@ -49,11 +48,6 @@ class MainMenu : AppCompatActivity() {
 
     private fun openDaftarTamu() {
         val intent = Intent(this@MainMenu, DaftarTamuMasuk::class.java)
-        startActivity(intent)
-    }
-
-    private fun openPanduanPengguna() {
-        val intent = Intent(this@MainMenu, PanduanPengguna::class.java)
         startActivity(intent)
     }
 
