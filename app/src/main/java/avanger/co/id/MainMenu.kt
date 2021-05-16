@@ -9,7 +9,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.work.*
 import avanger.co.id.databinding.ActivityMainMenuBinding
-import java.util.concurrent.TimeUnit
 
 class MainMenu : AppCompatActivity() {
     companion object {
@@ -30,7 +29,7 @@ class MainMenu : AppCompatActivity() {
         binding.panduanpengguna.setOnClickListener { openPanduanPengguna() }
 
         // Run workers for data deletion.
-        val workRequest = PeriodicWorkRequestBuilder<DeleteTask>(1, TimeUnit.HOURS).build()
+        val workRequest = OneTimeWorkRequestBuilder<DeleteTask>().build()
         WorkManager.getInstance(applicationContext).enqueue(workRequest)
 
         // Manajemen permissions ada disini.
