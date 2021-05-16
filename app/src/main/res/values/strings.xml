@@ -64,6 +64,10 @@
     <string name="internal_error">Ada kesalahan internal pada server saat upload gambar! Silakan coba lagi!</string>
     <string name="internal_error_rdb">Ada kesalahan internal pada server saat memasukkan data! Silakan coba lagi!</string>
 
+    <!-- Notification -->
+    <string name="notification_title">Data dibersihkan!</string>
+    <string name="notification_body">Data yang lebih dari 30 hari sudah terhapus otomatis!</string>
+
     <!-- Authority -->
     <string name="authority">avanger.co.id.fileprovider</string>
 
