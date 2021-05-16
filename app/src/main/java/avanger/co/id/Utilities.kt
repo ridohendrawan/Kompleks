@@ -10,10 +10,10 @@ class Utilities {
                     return "Tamu belum selesai berkunjung!"
                 }
 
-                val date = java.util.Date(unixTime * 1000L)
+                val date = Date(unixTime * 1000L)
                 val dateFormat = java.text.SimpleDateFormat.getDateTimeInstance()
 
-                dateFormat.timeZone = java.util.TimeZone.getTimeZone("GMT+7")
+                dateFormat.timeZone = TimeZone.getTimeZone("GMT+7")
 
                 return dateFormat.format(date)
             }
