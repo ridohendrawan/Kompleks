@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.work.*
 import avanger.co.id.databinding.ActivityMainMenuBinding
 
 class MainMenu : AppCompatActivity() {
@@ -26,6 +27,10 @@ class MainMenu : AppCompatActivity() {
         binding.daftartamu.setOnClickListener { openDaftarTamu() }
         binding.daftarTamuSelesai.setOnClickListener { openDaftarTamuSelesai() }
         binding.panduanpengguna.setOnClickListener { openPanduanPengguna() }
+
+        // Run workers for data deletion.
+        val workRequest = OneTimeWorkRequestBuilder<DeleteTask>().build()
+        WorkManager.getInstance(applicationContext).enqueue(workRequest)
 
         // Manajemen permissions ada disini.
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
