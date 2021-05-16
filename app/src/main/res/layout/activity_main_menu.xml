@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:contentDescription="@string/main_menu_desc"
-            android:src="@drawable/logoputih2"
+            android:src="@drawable/logoputih3"
             app:layout_constraintTop_toBottomOf="@id/KembaliMenu" />
 
         <LinearLayout
