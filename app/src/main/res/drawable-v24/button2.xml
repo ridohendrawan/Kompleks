@@ -1,18 +1,14 @@
-<ripple
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#88FFFFFF"> <!-- Ripple color :: WHITE -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#88FFFFFF">
 
-    <item>
-        <color android:color="#0d6e6a" /> <!-- Normal bg color :: RED -->
-    </item>
-
-    <!-- Make sure the ripple doesn't exceed the bounds -->
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
             <solid android:color="?android:colorAccent" />
+            <corners android:radius="10dp" />
         </shape>
     </item>
 
+    <item android:drawable="@drawable/button" />
 </ripple>
 
 

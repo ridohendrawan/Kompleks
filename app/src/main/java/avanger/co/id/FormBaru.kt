@@ -61,6 +61,8 @@ class FormBaru : AppCompatActivity() {
                     }
                 }
             }
+        } else {
+            binding.placeholderGambar.setImageDrawable(null)
         }
     }
 
@@ -119,39 +121,40 @@ class FormBaru : AppCompatActivity() {
         val jamMasuk = (System.currentTimeMillis() / 1000)
         val jamKeluar = 0L
 
-        if (nama.isNotBlank() && tujuan.isNotBlank() && plat.isNotBlank() && binding.placeholderGambar.drawable !== null) {
-            val gambarCloud = Uri.fromFile(File(imagePath))
-            val ref = storage.reference.child(getString(R.string.firebase_storage)).child(jamMasuk.toString())
+        if (nama.isBlank() || tujuan.isBlank() || plat.isBlank() || binding.placeholderGambar.drawable == null) {
+            return Snackbar.make(binding.formBaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
+        }
 
-            ref.putFile(gambarCloud).addOnProgressListener {
-                binding.formProgress.visibility = View.VISIBLE
-            }.addOnFailureListener {
-                binding.formProgress.visibility = View.GONE
-                Toast.makeText(this, getString(R.string.internal_error), Toast.LENGTH_LONG).show()
-            }.addOnSuccessListener { res ->
-                res.let {
-                    ref.downloadUrl.addOnSuccessListener { uri ->
-                        val uuid = UUID.randomUUID().toString()
-                        val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
-                        val tamuRef = db.collection(getString(R.string.firebase_document)).document(uuid)
+        val gambarCloud = Uri.fromFile(File(imagePath))
+        val ref = storage.reference.child(getString(R.string.firebase_storage)).child(jamMasuk.toString())
 
-                        tamuRef.set(tamu).addOnSuccessListener {
-                            Snackbar.make(binding.formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
+        ref.putFile(gambarCloud).addOnProgressListener {
+            binding.formProgress.visibility = View.VISIBLE
+        }.addOnFailureListener {
+            binding.formProgress.visibility = View.GONE
+            Toast.makeText(this, getString(R.string.internal_error), Toast.LENGTH_LONG).show()
+        }.addOnSuccessListener { res ->
+            res.let {
+                ref.downloadUrl.addOnSuccessListener { uri ->
+                    val uuid = UUID.randomUUID().toString()
+                    val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
+                    val tamuRef = db.collection(getString(R.string.firebase_document)).document(uuid)
 
-                            binding.formProgress.visibility = View.GONE
+                    tamuRef.set(tamu).addOnSuccessListener {
+                        Snackbar.make(binding.formBaru, getString(R.string.success_upload), Snackbar.LENGTH_LONG).show()
 
-                            Timer().schedule(1000) {
-                                finish()
-                            }
-                        }.addOnFailureListener {
-                            binding.formProgress.visibility = View.GONE
-                            Toast.makeText(this, getString(R.string.internal_error_rdb), Toast.LENGTH_LONG).show()
+                        binding.formProgress.visibility = View.GONE
+                        File(imagePath).delete()
+
+                        Timer().schedule(500) {
+                            finish()
                         }
+                    }.addOnFailureListener {
+                        binding.formProgress.visibility = View.GONE
+                        Toast.makeText(this, getString(R.string.internal_error_rdb), Toast.LENGTH_LONG).show()
                     }
                 }
             }
-        } else {
-            Snackbar.make(binding.formBaru, getString(R.string.required_fields), Snackbar.LENGTH_LONG).show()
         }
     }
 }

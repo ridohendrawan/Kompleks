@@ -70,8 +70,8 @@ class DeleteTask(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
 
         val notification = NotificationCompat.Builder(applicationContext, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Data dibersihkan!")
-                .setContentText("Data yang sudah lebih dari 30 hari sudah terhapus!")
+                .setContentTitle(applicationContext.getString(R.string.notification_title))
+                .setContentText(applicationContext.getString(R.string.notification_body))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
