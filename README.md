@@ -78,6 +78,7 @@ service firebase.storage {
 ```
 
 - Build the application and run!
+- As a note, you might need to add several indexes to the Firestore when its your first time performing queries for performance. Just open your `Logcat` in Android Studio and it will guide you there.
 
 ## Contribution
 
