@@ -93,9 +93,19 @@ class DaftarTamuKeluar : AppCompatActivity() {
 
                 when (state) {
                     LoadingState.LOADING_INITIAL -> binding.progressBar.visibility = View.VISIBLE
-                    LoadingState.LOADING_MORE -> binding.progressBar.visibility = View.VISIBLE
-                    LoadingState.FINISHED -> binding.progressBar.visibility = View.GONE
-                    LoadingState.LOADED -> binding.progressBar.visibility = View.GONE
+
+                    LoadingState.LOADING_MORE -> binding.extraLoadingSpinner.visibility = View.VISIBLE
+
+                    LoadingState.FINISHED -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.extraLoadingSpinner.visibility = View.GONE
+                    }
+
+                    LoadingState.LOADED -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.extraLoadingSpinner.visibility = View.GONE
+                    }
+
                     LoadingState.ERROR -> Snackbar.make(binding.progressBar, getString(R.string.daftar_tamu_failed), Snackbar.LENGTH_LONG).show()
                 }
             }
