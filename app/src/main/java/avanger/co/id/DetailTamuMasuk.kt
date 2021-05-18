@@ -63,7 +63,7 @@ class DetailTamuMasuk : AppCompatActivity() {
                     binding.formProgress.visibility = View.GONE
                     Snackbar.make(binding.detailDaftarTamu, getString(R.string.detail_tamu_success), Snackbar.LENGTH_LONG).show()
 
-                    Timer().schedule(1000) {
+                    Timer().schedule(200) {
                         finish()
                     }
                 }.addOnFailureListener {
