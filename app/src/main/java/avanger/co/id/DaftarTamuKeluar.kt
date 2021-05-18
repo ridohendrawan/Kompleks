@@ -12,6 +12,7 @@ import com.firebase.ui.firestore.paging.FirestorePagingAdapter
 import com.firebase.ui.firestore.paging.FirestorePagingOptions
 import com.firebase.ui.firestore.paging.LoadingState
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -56,10 +57,12 @@ class DaftarTamuKeluar : AppCompatActivity() {
     private fun tamuAdapter(): FirestorePagingAdapter<Tamu, TamuHolder> {
         // FirebaseUI preparations.
         val db = Firebase.firestore.collection(getString(R.string.firebase_document))
-        val query = db.orderBy("jamKeluar", Query.Direction.DESCENDING).whereEqualTo("didalamKompleks", false)
+        val query = db.whereEqualTo("owner", Firebase.auth.currentUser)
+                .whereEqualTo("didalamKompleks", false)
+                .orderBy("jamKeluar", Query.Direction.DESCENDING)
         val config = PagedList.Config.Builder()
                 .setEnablePlaceholders(false)
-                .setPrefetchDistance(5)
+                .setPrefetchDistance(3)
                 .setPageSize(10)
                 .build()
         val options = FirestorePagingOptions.Builder<Tamu>()

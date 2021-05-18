@@ -14,6 +14,7 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import avanger.co.id.databinding.ActivityFormBaruBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -137,7 +138,8 @@ class FormBaru : AppCompatActivity() {
             res.let {
                 ref.downloadUrl.addOnSuccessListener { uri ->
                     val uuid = UUID.randomUUID().toString()
-                    val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
+                    val owner = Firebase.auth.currentUser?.toString()
+                    val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true, owner)
                     val tamuRef = db.collection(getString(R.string.firebase_document)).document(uuid)
 
                     tamuRef.set(tamu).addOnSuccessListener {
