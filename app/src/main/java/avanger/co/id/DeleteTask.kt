@@ -37,16 +37,16 @@ class DeleteTask(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
 
         return try {
             val outdatedData = db
-                    .collection("tamu")
+                    .collection(applicationContext.getString(R.string.firebase_document))
                     .whereNotEqualTo("jamKeluar", 0)
-                    .orderBy("jamKeluar")
                     .whereLessThan("jamKeluar", cutoff)
+                    .orderBy("jamKeluar")
                     .get()
                     .await()
 
             outdatedData?.forEach { snapshot ->
                 val storageRef = storage
-                        .getReference("foto_tamu")
+                        .getReference(applicationContext.getString(R.string.firebase_storage))
                         .child(snapshot.get("jamMasuk").toString())
 
                 storageRef.delete().await()
