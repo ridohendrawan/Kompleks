@@ -24,7 +24,7 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         // Do all Firebase stuff in a separate coroutine.
-        Timer().schedule(1000) {
+        Timer().schedule(200) {
             CoroutineScope(Dispatchers.IO).launch {
                 auth = Firebase.auth
 
