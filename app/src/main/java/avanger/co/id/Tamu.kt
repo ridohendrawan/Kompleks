@@ -11,4 +11,5 @@ data class Tamu(val idTamu: String? = null,
                 val jamMasuk: Long? = null,
                 val jamKeluar: Long? = null,
                 val photo: String? = null,
-                val didalamKompleks: Boolean? = null) : Parcelable
+                val didalamKompleks: Boolean? = null,
+                val owner: String? = null) : Parcelable
