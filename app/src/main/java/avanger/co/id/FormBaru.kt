@@ -127,7 +127,7 @@ class FormBaru : AppCompatActivity() {
         }
 
         val gambarCloud = Uri.fromFile(File(imagePath))
-        val imageName = "visitor-$jamMasuk"
+        val imageName = "${Firebase.auth.currentUser?.email}-${jamMasuk}"
         val ref = storage.reference.child(getString(R.string.firebase_storage)).child(imageName)
 
         ref.putFile(gambarCloud).addOnProgressListener {
