@@ -57,7 +57,7 @@ class DaftarTamuKeluar : AppCompatActivity() {
     private fun tamuAdapter(): FirestorePagingAdapter<Tamu, TamuHolder> {
         // FirebaseUI preparations.
         val db = Firebase.firestore.collection(getString(R.string.firebase_document))
-        val query = db.whereEqualTo("owner", Firebase.auth.currentUser)
+        val query = db.whereEqualTo("owner", Firebase.auth.uid)
                 .whereEqualTo("didalamKompleks", false)
                 .orderBy("jamKeluar", Query.Direction.DESCENDING)
         val config = PagedList.Config.Builder()

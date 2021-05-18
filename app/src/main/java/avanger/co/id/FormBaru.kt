@@ -127,7 +127,8 @@ class FormBaru : AppCompatActivity() {
         }
 
         val gambarCloud = Uri.fromFile(File(imagePath))
-        val ref = storage.reference.child(getString(R.string.firebase_storage)).child(jamMasuk.toString())
+        val imageName = "visitor-$jamMasuk"
+        val ref = storage.reference.child(getString(R.string.firebase_storage)).child(imageName)
 
         ref.putFile(gambarCloud).addOnProgressListener {
             binding.formProgress.visibility = View.VISIBLE
@@ -138,7 +139,7 @@ class FormBaru : AppCompatActivity() {
             res.let {
                 ref.downloadUrl.addOnSuccessListener { uri ->
                     val uuid = UUID.randomUUID().toString()
-                    val owner = Firebase.auth.currentUser?.toString()
+                    val owner = Firebase.auth.uid
                     val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true, owner)
                     val tamuRef = db.collection(getString(R.string.firebase_document)).document(uuid)
 

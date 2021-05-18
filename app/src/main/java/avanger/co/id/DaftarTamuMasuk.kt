@@ -51,7 +51,7 @@ class DaftarTamuMasuk : AppCompatActivity() {
 
     private fun tamuAdapter(): FirestoreRecyclerAdapter<Tamu, TamuHolder> {
         val db = Firebase.firestore.collection(getString(R.string.firebase_document))
-        val query = db.whereEqualTo("owner", Firebase.auth.currentUser)
+        val query = db.whereEqualTo("owner", Firebase.auth.uid)
                 .whereEqualTo("didalamKompleks", true)
                 .orderBy("jamMasuk", Query.Direction.DESCENDING)
         val options = FirestoreRecyclerOptions.Builder<Tamu>()
