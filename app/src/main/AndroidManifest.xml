@@ -71,7 +71,7 @@
             android:name=".SplashScreen"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.UAS_Avanger_White"
+            android:theme="@style/SplashTheme"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
