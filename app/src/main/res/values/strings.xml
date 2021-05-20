@@ -28,6 +28,7 @@
     <string name="daftar_tamu_failed">Ada kesalahan internal dalam pengambilan data!</string>
     <string name="daftar_tamu_keluar_title">Tamu Keluar</string>
     <string name="daftar_tamu_keluar_confirm">List seluruh tamu dalam database.</string>
+    <string name="daftar_tamu_loading">Mohon menunggu, sedang loading!</string>
 
     <!-- Content (Main Menu) -->
     <string name="main_menu_btnOne">Tamu Baru</string>
@@ -72,7 +73,7 @@
     <string name="authority">avanger.co.id.fileprovider</string>
 
     <!-- Firebase -->
-    <string name="firebase_document">tamu</string>
+    <string name="firebase_document">visitors</string>
     <string name="firebase_storage">foto_tamu</string>
     <string name="firebase_email">kompleks.avanger.com</string>
 </resources>
