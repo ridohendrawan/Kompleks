@@ -14,6 +14,7 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import avanger.co.id.databinding.ActivityFormBaruBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -126,7 +127,8 @@ class FormBaru : AppCompatActivity() {
         }
 
         val gambarCloud = Uri.fromFile(File(imagePath))
-        val ref = storage.reference.child(getString(R.string.firebase_storage)).child(jamMasuk.toString())
+        val imageName = "${Firebase.auth.currentUser?.email}-${jamMasuk}"
+        val ref = storage.reference.child(getString(R.string.firebase_storage)).child(imageName)
 
         ref.putFile(gambarCloud).addOnProgressListener {
             binding.formProgress.visibility = View.VISIBLE
@@ -137,7 +139,8 @@ class FormBaru : AppCompatActivity() {
             res.let {
                 ref.downloadUrl.addOnSuccessListener { uri ->
                     val uuid = UUID.randomUUID().toString()
-                    val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true)
+                    val owner = Firebase.auth.uid
+                    val tamu = Tamu(uuid, nama, tujuan, plat, jamMasuk, jamKeluar, uri.toString(), true, owner)
                     val tamuRef = db.collection(getString(R.string.firebase_document)).document(uuid)
 
                     tamuRef.set(tamu).addOnSuccessListener {
