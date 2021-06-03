@@ -32,7 +32,7 @@ class DeleteTask(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, 
         val db = Firebase.firestore
         val storage = Firebase.storage
         val currentTime = System.currentTimeMillis()
-        val timeInterval = TimeUnit.MILLISECONDS.convert(30, TimeUnit.DAYS)
+        val timeInterval = TimeUnit.MILLISECONDS.convert(10, TimeUnit.DAYS)
         val cutoff = (currentTime - timeInterval) / 1000L
 
         return try {
