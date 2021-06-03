@@ -12,9 +12,9 @@
 
         <Button
             android:id="@+id/returnBtn"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="20dp"
             android:background="@drawable/arrow_left" />
 
         <View
@@ -24,9 +24,9 @@
 
         <ProgressBar
             android:id="@+id/extraLoadingSpinner"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="20dp"
             android:indeterminateTint="@color/white"
             android:visibility="gone" />
     </LinearLayout>
@@ -37,6 +37,7 @@
         android:layout_marginTop="15dp"
         android:letterSpacing="0.03"
         android:text="@string/daftar_tamu_keluar_title"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#ffff"
         android:textSize="30sp"

@@ -26,6 +26,7 @@
             android:layout_marginTop="15dp"
             android:letterSpacing="0.03"
             android:text="@string/detail_tamu_title_keluar"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="#ffff"
             android:textSize="30sp"
