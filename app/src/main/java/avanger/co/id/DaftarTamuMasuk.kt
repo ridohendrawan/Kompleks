@@ -10,6 +10,7 @@ import avanger.co.id.databinding.ActivityDaftarTamuMasukBinding
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
@@ -50,7 +51,9 @@ class DaftarTamuMasuk : AppCompatActivity() {
 
     private fun tamuAdapter(): FirestoreRecyclerAdapter<Tamu, TamuHolder> {
         val db = Firebase.firestore.collection(getString(R.string.firebase_document))
-        val query = db.orderBy("jamMasuk", Query.Direction.DESCENDING).whereEqualTo("didalamKompleks", true)
+        val query = db.whereEqualTo("owner", Firebase.auth.uid)
+                .whereEqualTo("didalamKompleks", true)
+                .orderBy("jamMasuk", Query.Direction.DESCENDING)
         val options = FirestoreRecyclerOptions.Builder<Tamu>()
                 .setLifecycleOwner(this)
                 .setQuery(query, Tamu::class.java)

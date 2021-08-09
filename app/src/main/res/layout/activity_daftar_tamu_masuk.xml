@@ -21,6 +21,7 @@
         android:layout_marginTop="15dp"
         android:letterSpacing="0.03"
         android:text="@string/daftar_tamu_title"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#ffff"
         android:textSize="30sp"
@@ -34,11 +35,25 @@
         android:background="@android:color/darker_gray"
         android:backgroundTint="#ffff" />
 
-    <ProgressBar
+    <LinearLayout
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminateTint="@color/white" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/daftar_tamu_loading"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tamuRecyclerView"

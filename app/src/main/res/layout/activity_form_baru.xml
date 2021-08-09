@@ -26,6 +26,7 @@
             android:layout_marginTop="20dp"
             android:letterSpacing="0.03"
             android:text="@string/form_baru_title"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="#ffff"
             android:textSize="30sp"

@@ -6,14 +6,30 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/returnBtn"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/arrow_left" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/returnBtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/arrow_left" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ProgressBar
+            android:id="@+id/extraLoadingSpinner"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="20dp"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,6 +37,7 @@
         android:layout_marginTop="15dp"
         android:letterSpacing="0.03"
         android:text="@string/daftar_tamu_keluar_title"
+        android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#ffff"
         android:textSize="30sp"
@@ -34,11 +51,25 @@
         android:background="@android:color/darker_gray"
         android:backgroundTint="#ffff" />
 
-    <ProgressBar
+    <LinearLayout
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminateTint="@color/white" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/daftar_tamu_loading"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tamuRecyclerView"
